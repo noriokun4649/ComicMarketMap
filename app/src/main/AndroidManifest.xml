@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (c) 2018 noriokun4649.
+  -->
+
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="jp.noriokun4649.comicmarketmap">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:name=".MyApp"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:fullBackupContent="@xml/backup_descriptor">
+
+        <activity
+            android:name=".activity.MainActivity"
+            android:launchMode="singleTask"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter android:order="1">
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:scheme="comiketwittercallback" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".activity.SettingActivity" />
+        <activity
+            android:name=".activity.ImportFollowActivity"
+            android:configChanges="orientation|screenSize" />
+        <activity
+            android:name=".activity.ImportListListActivity"
+            android:configChanges="orientation|screenSize" />
+        <activity android:name=".activity.ImportListActivity"
+            android:configChanges="orientation|screenSize" />
+        <activity android:name=".activity.ImportCSVActivity"
+            android:configChanges="orientation|screenSize" />
+        <activity android:name=".activity.ImportBackupActivity"
+            android:configChanges="orientation|screenSize" />
+    </application>
+
+</manifest>

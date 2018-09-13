@@ -1,0 +1,80 @@
+<!--
+  ~ Copyright (c) 2018 noriokun4649.
+  -->
+
+<resources>
+    <string name="app_name">ComicMarketMap</string>
+    <string name="Map">Map</string>
+    <string name="CircleList">Circle List</string>
+    <string name="CircleInfo">Circle Info</string>
+    <string name="CircleListEdit">Circle List Edit</string>
+    <string name="CircleListImport">Circle List Import</string>
+    <string name="nav_header_title">Comic Map</string>
+    <string name="nav_header_subtitle" translatable="false">noriokun.official.mail@gmail.com</string>
+    <string name="Setting">Setting</string>
+    <string name="navigation_drawer_open">Open</string>
+    <string name="navigation_drawer_close">Close</string>
+    <string name="MapTool">Map Tool</string>
+    <string name="Other">Other</string>
+    <string name="Oss">Open Source license</string>
+    <string name="thisoss">This application uses the following open source library</string>
+    <string name="wat_close">Do you want to close the app?</string>
+    <string name="close">Close</string>
+    <string name="cancel">Cancel</string>
+    <string name="twitter_conect">Twitter Conect or Disconect</string>
+    <string name="follow_import">Import from Follow user</string>
+    <string name="list_import">Import from list user</string>
+    <string name="csv_import">Import from CSV file</string>
+    <string name="backup_import">Import from backup file</string>
+    <string name="twitter_sinin">Connect to Twitter</string>
+    <string name="this_connect_now">" It is already connected. "</string>
+    <string name="this_connect_now_mass">" It is already connected. Would you like to disconnect?"</string>
+    <string name="dis_connect">Disconnect</string>
+    <string name="twitter_connect_ok">Twitter connection is complete</string>
+    <string name="twitter_connect_error">Twitter Connection failed</string>
+    <string name="twitter_connect_please">Need a Twitter connection</string>
+    <string name="connect">connect</string>
+    <string name="api_limit">Api API limit. Try again in 15 minutes.</string>
+    <string name="color_edit">Color Edit</string>
+    <string name="memo_edit">Memo Edit</string>
+    <string name="plese_color">Choose a color</string>
+    <string name="icon">icon</string>
+    <string name="color">color</string>
+    <string name="item_delete">Delete Secuaafule</string>
+    <string name="undo">UNDO</string>
+    <string name="please_action">Plese action</string>
+    <string name="open_twitter">Open Twitter</string>
+    <string name="day_edit">Day edit</string>
+    <string name="space_edit">Space edit</string>
+    <string name="name_edit">Name edit</string>
+    <string name="delete">delete</string>
+    <string name="menber">Menbers:%1$d</string>
+    <string name="owner">Owner:%1$s</string>
+    <string name="getting_follow_user_now">Follow user getting now......</string>
+    <string name="getting_list_user_now">List user getting now......</string>
+    <string name="getting_list_now">List getting now......</string>
+    <string name="getting_list_user_more_now">Retrieving users for %1$d users \n %2$d being added to the list ......</string>
+    <string name="processing">Processing</string>
+    <string name="setting_refine1">Refine setting (Following)</string>
+    <string name="setting_refine2">Refine setting (List)</string>
+    <string name="setting_event_fomart">Display format of event date</string>
+    <string name="setting_action_click">Action when clicking of circle list</string>
+    <string name="setting_action_long">Action when long press of circle list</string>
+    <string name="setting_theme">Theme color</string>
+    <string name="setting_refine1_info">Settings for importing from users who are following \nWhen checked, it will only add users whose circle space is included in the user name.</string>
+    <string name="setting_refine2_info">Setting when importing from list \nWhen checked, it will only add users whose circle space is included in the user name.</string>
+    <string name="setting_event_fomart_info">You can change the display format of event date to \"day of the week\", \"date\", \"number of times\".</string>
+    <string name="setting_action_long_info">You can change the action when long press of the circle list is \"Open Map\", \"Open Twitter\", \"Checked purchase\" or \"Always Listen\".</string>
+    <string name="setting_action_click_info">You can change the action when clicking a circle list to either \"Open Map\", \"Open Twitter\", \"Checked purchase\" or \"Always Listen\".</string>
+    <string name="setting_theme_info">You can set the theme to \"normal\" or \"nighttime\".</string>
+    <string name="setting_csv_import">Csv file import setting</string>
+    <string name="setting_csv_import_info">When importing CSV file, you can change whether to import the \"circle name\" or \"authors name\".</string>
+    <string name="csv_file_please">Please csv file only</string>
+    <string name="select">Select</string>
+    <string name="file_get_error">File acquisition failed</string>
+    <string name="plase_tekisetu_file">Please select the appropriate file</string>
+    <string name="file_import_error">Data error: It may not be a catalog CSV file</string>
+    <string name="load_error_detanotfound">LOAD ERROR....\n\n!!!! Data not found !!!!</string>
+    <string name="loadding_now">Loading now....</string>
+
+</resources>
