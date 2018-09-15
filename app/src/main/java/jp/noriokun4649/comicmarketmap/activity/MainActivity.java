@@ -173,7 +173,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                         .withActivityTitle(getString(R.string.Oss))
                         .withActivityStyle(Libs.ActivityStyle.LIGHT_DARK_TOOLBAR)
                         .withAboutDescription(getString(R.string.thisoss))
-                        .withLibraries("imagelayout", "leaflet", "colorpickerview", "twitter4j", "realm", "realm_java", "android_bootstrap")
+                        .withLibraries("imagelayout", "leaflet", "colorpickerview", "twitter4j", "realm", "realm_java", "android_bootstrap", "cryptore")
                         .withLicenseShown(true)
                         .withAboutIconShown(true)
                         .withVersionShown(true)

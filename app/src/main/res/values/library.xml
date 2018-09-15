@@ -4,46 +4,141 @@
   -->
 
 <resources>
+    <string name="define_int_colorpickerview" translatable="false"></string>
     <!-- Author section -->
+    <string name="library_colorpickerview_author" translatable="false">Daniel Nilsson</string>
+    <string name="library_colorpickerview_authorWebsite" translatable="false">https://github.com/danielnilsson9/color-picker-view</string>
     <!-- Library section -->
+    <string name="library_colorpickerview_libraryName" translatable="false">ColorPickerView</string>
+    <string name="library_colorpickerview_libraryDescription" translatable="false">A simple good looking color picker component for Android A color picker is something that has always been missing from the standard set of components which developers can build their user interface in Android with. This is a color picker which I wrote for one of my own project which I decided to release as open source.</string>
+    <string name="library_colorpickerview_libraryWebsite" translatable="false">https://github.com/danielnilsson9/color-picker-view</string>
+    <string name="library_colorpickerview_libraryVersion" translatable="false">1.4.0</string>
     <!-- OpenSource section -->
+    <string name="library_colorpickerview_isOpenSource" translatable="false">true</string>
+    <string name="library_colorpickerview_repositoryLink" translatable="false">https://github.com/danielnilsson9/color-picker-view</string>
     <!-- ClassPath for autoDetect section -->
+    <string name="library_colorpickerview_classPath" translatable="false"></string>
     <!-- License section -->
+    <string name="library_colorpickerview_licenseId" translatable="false">apache_2_0</string>
+    <string name="define_int_google_material_icons" translatable="false"></string>
     <!-- Author section -->
+    <string name="library_google_material_icons_author" translatable="false">Google Inc.</string>
+    <string name="library_google_material_icons_authorWebsite" translatable="false">https://material.io/tools/icons/?style=baseline</string>
     <!-- Library section -->
+    <string name="library_google_material_icons_libraryName" translatable="false">Google Material Icons</string>
+    <string name="library_google_material_icons_libraryDescription" translatable="false">Material icons are delightful, beautifully crafted symbols for common actions and items.</string>
+    <string name="library_google_material_icons_libraryWebsite" translatable="false">https://material.io/tools/icons/?style=baseline</string>
+    <string name="library_google_material_icons_libraryVersion" translatable="false"></string>
     <!-- OpenSource section -->
+    <string name="library_google_material_icons_isOpenSource" translatable="false">true</string>
+    <string name="library_google_material_icons_repositoryLink" translatable="false">https://material.io/tools/icons/?style=baseline</string>
     <!-- ClassPath for autoDetect section -->
+    <string name="library_google_material_icons_classPath" translatable="false"></string>
     <!-- License section -->
+    <string name="library_google_material_icons_licenseId" translatable="false">apache_2_0</string>
     <!-- Custom variables section -->
+    <string name="define_int_imagelayout" translatable="false"></string>
     <!-- Author section -->
+    <string name="library_imagelayout_author" translatable="false">Manuel Peinado</string>
+    <string name="library_imagelayout_authorWebsite" translatable="false">https://github.com/ManuelPeinado/ImageLayout</string>
     <!-- Library section -->
+    <string name="library_imagelayout_libraryName" translatable="false">Image Layout</string>
+    <string name="library_imagelayout_libraryDescription" translatable="false">A layout that arranges its children in relation to a background image. The layout of each child is specified in image coordinates (pixels), and the conversion to screen coordinates is performed automatically.  The background image is adjusted so that it fills the available space.  For some applications this might be a useful replacement for the now deprecated AbsoluteLayout.</string>
+    <string name="library_imagelayout_libraryWebsite" translatable="false">https://github.com/ManuelPeinado/ImageLayout</string>
+    <string name="library_imagelayout_libraryVersion" translatable="false">1.1.0</string>
     <!-- OpenSource section -->
+    <string name="library_imagelayout_isOpenSource" translatable="false">true</string>
+    <string name="library_imagelayout_repositoryLink" translatable="false">https://github.com/ManuelPeinado/ImageLayout</string>
     <!-- ClassPath for autoDetect section -->
+    <string name="library_imagelayout_classPath" translatable="false"></string>
     <!-- License section -->
+    <string name="library_imagelayout_licenseId" translatable="false">apache_2_0</string>
     <!-- Custom variables section -->
     <!-- Custom variables section -->
+    <string name="define_int_twitter4j" translatable="false"></string>
     <!-- Author section -->
+    <string name="library_twitter4j_author" translatable="false">Yusuke Yamamoto</string>
+    <string name="library_twitter4j_authorWebsite" translatable="false">http://twitter4j.org/ja/index.html</string>
     <!-- Library section -->
+    <string name="library_twitter4j_libraryName" translatable="false">Twitter4J </string>
+    <string name="library_twitter4j_libraryDescription" translatable="false">Twitter4J is an unofficial Java library for the Twitter API. With Twitter4J, you can easily integrate your Java application with the Twitter service. Twitter4J is an unofficial library.</string>
+    <string name="library_twitter4j_libraryWebsite" translatable="false">http://twitter4j.org/ja/index.html</string>
+    <string name="library_twitter4j_libraryVersion" translatable="false">4.0.7</string>
     <!-- OpenSource section -->
+    <string name="library_twitter4j_isOpenSource" translatable="false">true</string>
+    <string name="library_twitter4j_repositoryLink" translatable="false">http://twitter4j.org/ja/index.html</string>
     <!-- ClassPath for autoDetect section -->
+    <string name="library_twitter4j_classPath" translatable="false"></string>
     <!-- License section -->
+    <string name="library_twitter4j_licenseId" translatable="false">apache_2_0</string>
     <!-- Custom variables section -->
+    <string name="define_int_leaflet" translatable="false"></string>
     <!-- Author section -->
+    <string name="library_leaflet_author" translatable="false">Leaflet</string>
+    <string name="library_leaflet_authorWebsite" translatable="false">https://leafletjs.com/index.html</string>
     <!-- Library section -->
+    <string name="library_leaflet_libraryName" translatable="false">Leaflet</string>
+    <string name="library_leaflet_libraryDescription" translatable="false">Leaflet is the leading open-source JavaScript library for mobile-friendly interactive maps. Weighing just about 37 KB of gzipped JS code, it has all the mapping features most developers ever need.</string>
+    <string name="library_leaflet_libraryWebsite" translatable="false">https://github.com/Leaflet/Leaflet</string>
+    <string name="library_leaflet_libraryVersion" translatable="false">1.3.3</string>
     <!-- OpenSource section -->
+    <string name="library_leaflet_isOpenSource" translatable="false">true</string>
+    <string name="library_leaflet_repositoryLink" translatable="false">https://github.com/Leaflet/Leaflet</string>
     <!-- ClassPath for autoDetect section -->
+    <string name="library_leaflet_classPath" translatable="false"></string>
     <!-- License section -->
+    <string name="library_leaflet_licenseId" translatable="false">bsd_2</string>
     <!-- Custom variables section -->
 
+    <string name="define_int_realm_java" translatable="false"></string>
     <!-- Author section -->
+    <string name="library_realm_java_author" translatable="false">Realm</string>
+    <string name="library_realm_java_authorWebsite" translatable="false">https://realm.io/jp/docs/java/latest/</string>
     <!-- Library section -->
+    <string name="library_realm_java_libraryName" translatable="false">Realm-Java</string>
+    <string name="library_realm_java_libraryDescription" translatable="false">Realm is a mobile database that runs directly inside phones, tablets or wearables. This repository holds the source code for the Java version of Realm, which currently runs only on Android.</string>
+    <string name="library_realm_java_libraryWebsite" translatable="false">https://github.com/realm/realm-java</string>
+    <string name="library_realm_java_libraryVersion" translatable="false">5.4.2</string>
     <!-- OpenSource section -->
+    <string name="library_realm_java_isOpenSource" translatable="false">true</string>
+    <string name="library_realm_java_repositoryLink" translatable="false">https://github.com/realm/realm-java</string>
     <!-- ClassPath for autoDetect section -->
+    <string name="library_realm_java_classPath" translatable="false"></string>
     <!-- License section -->
+    <string name="library_realm_java_licenseId" translatable="false">apache_2_0</string>
     <!-- Custom variables section -->
+    <string name="define_int_android_bootstrap" translatable="false"></string>
     <!-- Author section -->
+    <string name="library_android_bootstrap_author" translatable="false">Bearded Hen</string>
+    <string name="library_android_bootstrap_authorWebsite" translatable="false">https://github.com/Bearded-Hen/Android-Bootstrap</string>
     <!-- Library section -->
+    <string name="library_android_bootstrap_libraryName" translatable="false">Android-Bootstrap</string>
+    <string name="library_android_bootstrap_libraryDescription" translatable="false">Android Bootstrap is an Android library which provides custom views styled according to the Twitter Bootstrap Specification. This allows you to spend more time on development rather than trying to get a consistent theme across your app, especially if you are already familiar with the Bootstrap Framework.</string>
+    <string name="library_android_bootstrap_libraryWebsite" translatable="false">https://github.com/Bearded-Hen/Android-Bootstrap</string>
+    <string name="library_android_bootstrap_libraryVersion" translatable="false">2.3.1</string>
     <!-- OpenSource section -->
+    <string name="library_android_bootstrap_isOpenSource" translatable="false">true</string>
+    <string name="library_android_bootstrap_repositoryLink" translatable="false">https://github.com/Bearded-Hen/Android-Bootstrap</string>
     <!-- ClassPath for autoDetect section -->
+    <string name="library_android_bootstrap_classPath" translatable="false"></string>
     <!-- License section -->
+    <string name="library_android_bootstrap_licenseId" translatable="false">mit</string>
+
+    <string name="define_int_cryptore"></string>
+    <!-- Author section -->
+    <string name="library_cryptore_author">KazaKago</string>
+    <string name="library_cryptore_authorWebsite">https://kazakago.hatenablog.jp/</string>
+    <!-- Library section -->
+    <string name="library_cryptore_libraryName">Cryptore</string>
+    <string name="library_cryptore_libraryDescription">This library performs encryption and decryption byte array using Android KeyStore System.</string>
+    <string name="library_cryptore_libraryWebsite">https://github.com/KazaKago/Cryptore</string>
+    <string name="library_cryptore_libraryVersion">1.3.0</string>
+    <!-- OpenSource section -->
+    <string name="library_cryptore_isOpenSource">true</string>
+    <string name="library_cryptore_repositoryLink">https://github.com/KazaKago/Cryptore</string>
+    <!-- ClassPath for autoDetect section -->
+    <string name="library_cryptore_classPath"></string>
+    <!-- License section -->
+    <string name="library_cryptore_licenseId">mit</string>
+    <!-- Custom variables section -->
 </resources>
