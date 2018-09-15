@@ -202,10 +202,9 @@ abstract class ImportBase extends AppCompatActivity
                         break;
                     default:
                 }
-                adapter.notifyDataSetChanged();
                 break;
             case "edit_memo":
-                Circle circle1 = adapter.getItem(dialogId);
+                Circle circle1 = adapter.getItem(position);
                 circle1.setMemo(returnMemo);
                 break;
             case "item_list":
@@ -232,5 +231,6 @@ abstract class ImportBase extends AppCompatActivity
                 break;
             default:
         }
+        adapter.notifyDataSetChanged();
     }
 }
