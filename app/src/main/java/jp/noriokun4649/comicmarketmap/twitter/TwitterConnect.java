@@ -313,7 +313,8 @@ public class TwitterConnect implements Serializable {
      * @throws InvalidAlgorithmParameterException InvalidAlgorithmParameterException
      * @throws IOException                        IOException
      */
-    private Cryptore getCryptore() throws CertificateException, NoSuchPaddingException, NoSuchAlgorithmException, KeyStoreException, NoSuchProviderException, InvalidAlgorithmParameterException, IOException {
+    private Cryptore getCryptore() throws CertificateException, NoSuchPaddingException, NoSuchAlgorithmException,
+            KeyStoreException, NoSuchProviderException, InvalidAlgorithmParameterException, IOException {
         Cryptore.Builder builder = new Cryptore.Builder("CIPHER_RSA", CipherAlgorithm.RSA);
         builder.setContext(context);
         return builder.build();

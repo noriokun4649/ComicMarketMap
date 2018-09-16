@@ -21,6 +21,6 @@ public class MyApp extends Application {
         TypefaceProvider.registerDefaultIconSets();
         Realm.init(this);
         RealmConfiguration configuration = new RealmConfiguration.Builder().name("noriokunrealm.realm").build();
-    }
 
+    }
 }
