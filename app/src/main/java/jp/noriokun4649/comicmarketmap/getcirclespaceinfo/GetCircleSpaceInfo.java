@@ -154,7 +154,7 @@ public class GetCircleSpaceInfo {
                         String hall = getHole(block);
                         boolean isWall = isWall(block);
                         Circle circle = new Circle(name, screenName, url, day, block, hall,
-                                isWall, "メモ欄", Color.GREEN, false);
+                                isWall, "メモ欄", Color.GREEN, false, 000, "");
                         adapter.add(circle);
                         adapter.notifyDataSetChanged();
                     }

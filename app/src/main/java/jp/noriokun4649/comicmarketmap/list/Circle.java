@@ -51,7 +51,15 @@ public class Circle {
      */
     private boolean check;
 
+    /**
+     * サークルのジャンルコードの情報です.
+     */
+    private int genreCode;
 
+    /**
+     * サークルのURLの情報です.
+     */
+    private String url;
 
     /**
      * サークル情報をパターンマッチングするためのインスタンスでしゅ.
@@ -71,10 +79,12 @@ public class Circle {
      * @param memo       メモの情報です
      * @param color      目印になる色の設定です。カラーコードで入れてください
      * @param check      購入済みかどうかの情報です
+     * @param url        URLです
+     * @param genreCode  ジャンルコードです
      */
     public Circle(final String userName, final String screenName, final String iconUrl,
                   final String day, final String block, final String hall, final boolean isWall,
-                  final String memo, final int color, final boolean check) {
+                  final String memo, final int color, final boolean check, final int genreCode, final String url) {
         this.userName = userName;
         this.screenName = screenName;
         this.iconUrl = iconUrl;
@@ -85,6 +95,8 @@ public class Circle {
         this.memo = memo;
         this.color = color;
         this.check = check;
+        this.genreCode = genreCode;
+        this.url = url;
         this.getCircleSpaceInfo = new GetCircleSpaceInfo();
     }
 
@@ -99,8 +111,10 @@ public class Circle {
      * @param memo       メモの情報です
      * @param color      目印になる色の設定です。カラーコードで入れてください
      * @param check      購入済みかどうかの情報です
+     * @param url        URLです
+     * @param genreCode  ジャンルコードです
      */
-    public Circle(final String userName, final String screenName, final String iconUrl, final String day, final String block, final String memo, final int color, final boolean check) {
+    public Circle(final String userName, final String screenName, final String iconUrl, final String day, final String block, final String memo, final int color, final boolean check, final int genreCode, final String url) {
         this.getCircleSpaceInfo = new GetCircleSpaceInfo();
         this.userName = userName;
         this.screenName = screenName;
@@ -110,6 +124,8 @@ public class Circle {
         this.memo = memo;
         this.color = color;
         this.check = check;
+        this.genreCode = genreCode;
+        this.url = url;
     }
 
     /**
@@ -310,5 +326,41 @@ public class Circle {
      */
     public void setWall(final boolean wall) {
         this.isWall = wall;
+    }
+
+    /**
+     * ジャンルコードの情報を取得するメソッドです.
+     *
+     * @return ジャンルコードの情報
+     */
+    public int getGenreCode() {
+        return genreCode;
+    }
+
+    /**
+     * ジャンルコードの情報を設定するメソッドです.
+     *
+     * @param genreCode ジャンルコードの情報
+     */
+    public void setGenreCode(final int genreCode) {
+        this.genreCode = genreCode;
+    }
+
+    /**
+     * URLの情報を取得するメソッドです.
+     *
+     * @return URLの情報
+     */
+    public String getUrl() {
+        return url;
+    }
+
+    /**
+     * URLの情報を設定するメソッドです.
+     *
+     * @param url url
+     */
+    public void setUrl(final String url) {
+        this.url = url;
     }
 }

@@ -16,7 +16,9 @@ import io.realm.annotations.PrimaryKey;
 public class DBObject extends RealmObject {
     /**
      * Twitterのユーザー名です.
+     * このパラメータはデータベースの主キーとして設定されています
      */
+    @PrimaryKey
     private String userName;
     /**
      * TwitterのID部分です.
@@ -34,11 +36,9 @@ public class DBObject extends RealmObject {
     private String day;
     /**
      * サークル情報として抽出できたサークルのブロックです.
-     * このパラメータはデータベースの主キーとして設定されています
      * このパラメータはインデックスが作成されます
      */
     @Index
-    @PrimaryKey
     private String block;
     /**
      * サークル情報として抽出できたホールです.
@@ -65,6 +65,16 @@ public class DBObject extends RealmObject {
     private boolean check;
 
     /**
+     * ジャンルコードの情報.
+     */
+    private int genreCode;
+
+    /**
+     * URLの情報.
+     */
+    private String url;
+
+    /**
      * 空のコンストラクタ.
      */
     public DBObject() {
@@ -83,10 +93,12 @@ public class DBObject extends RealmObject {
      * @param memo       メモ
      * @param color      色
      * @param check      購入済みかどうか
+     * @param genreCode  ジャンルコード
+     * @param url        URLになるもの
      */
     public DBObject(final String userName, final String screenName, final String iconUrl,
                     final String day, final String block, final String hall, final boolean isWall,
-                    final String memo, final int color, final boolean check) {
+                    final String memo, final int color, final boolean check, final int genreCode, final String url) {
         setUserName(userName);
         setScreenName(screenName);
         setIconUrl(iconUrl);
@@ -97,6 +109,8 @@ public class DBObject extends RealmObject {
         setMemo(memo);
         setColor(color);
         setCheck(check);
+        setGenreCode(genreCode);
+        setUrl(url);
     }
 
     /**
@@ -302,5 +316,41 @@ public class DBObject extends RealmObject {
      */
     public void setIsWall(final boolean isWall) {
         this.isWall = isWall;
+    }
+
+    /**
+     * ジャンルコードを取得.
+     *
+     * @return value of genreCode
+     */
+    public int getGenreCode() {
+        return genreCode;
+    }
+
+    /**
+     * ジャンルコードを設定.
+     *
+     * @param genreCode ジャンルコード
+     */
+    public void setGenreCode(final int genreCode) {
+        this.genreCode = genreCode;
+    }
+
+    /**
+     * URLを取得.
+     *
+     * @return value of url
+     */
+    public String getUrl() {
+        return url;
+    }
+
+    /**
+     * URLを設定.
+     *
+     * @param url URL
+     */
+    public void setUrl(final String url) {
+        this.url = url;
     }
 }
