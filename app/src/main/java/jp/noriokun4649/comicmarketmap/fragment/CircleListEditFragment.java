@@ -12,13 +12,28 @@ import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ListView;
 
+import io.realm.Realm;
+import io.realm.RealmResults;
 import jp.noriokun4649.comicmarketmap.R;
+import jp.noriokun4649.comicmarketmap.db.DBListAdapter;
+import jp.noriokun4649.comicmarketmap.db.DBObject;
 
 /**
  * サークルリスト編集のフラグメントです.
  */
 public class CircleListEditFragment extends Fragment {
+
+    /**
+     * Realmデータベースのインスタンス.
+     */
+    private Realm realm;
+    /**
+     * Realmデータベースのアダプタ.
+     */
+    private DBListAdapter adapter;
+
     @Nullable
     @Override
     public View onCreateView(@NonNull final LayoutInflater inflater,
@@ -28,7 +43,19 @@ public class CircleListEditFragment extends Fragment {
         Toolbar toolbar = getActivity().findViewById(R.id.toolbar);
         toolbar.setTitle(getString(R.string.CircleListEdit));
 
-        return view;
+        realm = Realm.getDefaultInstance();
+        RealmResults<DBObject> dbObjects = realm.where(DBObject.class).sort("block").findAll();
+        adapter = new DBListAdapter(dbObjects);
+        ListView listView = view.findViewById(R.id.list_edit);
+        listView.setAdapter(adapter);
 
+
+        return view;
+    }
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        realm.close();
     }
 }

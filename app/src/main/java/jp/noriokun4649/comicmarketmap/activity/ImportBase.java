@@ -27,7 +27,10 @@ import com.mikepenz.iconics.context.IconicsLayoutInflater2;
 
 import java.util.ArrayList;
 
+import io.realm.Realm;
+import io.realm.RealmAsyncTask;
 import jp.noriokun4649.comicmarketmap.R;
+import jp.noriokun4649.comicmarketmap.db.DBObject;
 import jp.noriokun4649.comicmarketmap.dialogfragment.DialogsListener;
 import jp.noriokun4649.comicmarketmap.dialogfragment.FragmentEditAlertDialog;
 import jp.noriokun4649.comicmarketmap.dialogfragment.FragmentItemsAlertDialog;
@@ -54,6 +57,16 @@ abstract class ImportBase extends AppCompatActivity
      */
     private CircleListItemAdapter adapter;
 
+    /**
+     * Realmデータベースのインスタンス.
+     */
+    private Realm realm;
+
+    /**
+     * Realmの非同期処理タスク.
+     */
+    private RealmAsyncTask realmAsyncTask;
+
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
         LayoutInflaterCompat.setFactory2(getLayoutInflater(), new IconicsLayoutInflater2(getDelegate()));
@@ -76,10 +89,11 @@ abstract class ImportBase extends AppCompatActivity
                 finish();
             }
         });
+        realm = Realm.getDefaultInstance();
         TextView textView = findViewById(R.id.textView4);
         textView.setText(getLoadingText());
         final ListView listView = findViewById(R.id.follow_import_list);
-        ArrayList<Circle> circles = new ArrayList<>();
+        final ArrayList<Circle> circles = new ArrayList<>();
         adapter = new CircleListItemAdapter(this, circles);
         TwitterConnect twitterConnect = new TwitterConnect(this);
         twitterConnect.login();
@@ -101,7 +115,6 @@ abstract class ImportBase extends AppCompatActivity
                         bundle.putInt("init_color", circle.getColor());
                         dialogFragment.setArguments(bundle);
                         dialogFragment.show(getFragmentManager(), "color");
-                        //ColorPickerDialogFragment;
                         break;
                     case R.id.memo_button:
                         // カスタムビューを設定
@@ -128,8 +141,51 @@ abstract class ImportBase extends AppCompatActivity
         fav.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(final View v) {
+                realmAsyncTask = realm.executeTransactionAsync(
+                        new Realm.Transaction() {
+                            @Override
+                            public void execute(final Realm realm) {
+                                final int count = adapter.getCount();
+                                for (int i = 0; i < count; i++) {
+                                    final Circle circle = adapter.getItem(i);
+                                    final DBObject dbObject = new DBObject();
+                                    dbObject.setUserName(circle.getUserName());
+                                    dbObject.setScreenName(circle.getScreenName());
+                                    dbObject.setBlock(circle.getBlock());
+                                    dbObject.setCheck(circle.isCheck());
+                                    dbObject.setDay(circle.getDay());
+                                    dbObject.setColor(circle.getColor());
+                                    dbObject.setHall(circle.getHall());
+                                    dbObject.setIconUrl(circle.getIconUrl());
+                                    dbObject.setIsWall(circle.isWall());
+                                    dbObject.setMemo(circle.getMemo());
+                                    dbObject.setGenreCode(circle.getGenreCode());
+                                    dbObject.setUrl(circle.getUrl());
+                                    realm.copyToRealmOrUpdate(dbObject);
+                                }
+                            }
+                        }, new Realm.Transaction.OnSuccess() {
+                            @Override
+                            public void onSuccess() {
+                                CoordinatorLayout layout = findViewById(R.id.coord);
+                                Snackbar.make(layout, "インポートされたデータを正常に保存しました", Snackbar.LENGTH_LONG).show();
+                            }
+                        }, new Realm.Transaction.OnError() {
+                            @Override
+                            public void onError(final Throwable error) {
+                                CoordinatorLayout layout = findViewById(R.id.coord);
+                                Snackbar.make(layout, "データの保存にエラーが発生しました", Snackbar.LENGTH_INDEFINITE).show();
+                            }
+                        }
+                );
             }
         });
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        realm.close();
     }
 
     /**
