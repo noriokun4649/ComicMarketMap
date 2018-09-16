@@ -4,6 +4,7 @@
 
 package jp.noriokun4649.comicmarketmap.asycktasks;
 
+import android.annotation.SuppressLint;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.AsyncTask;
@@ -28,8 +29,20 @@ import jp.noriokun4649.comicmarketmap.list.CircleListItemAdapter;
  * 例外が発生した際は、実行結果の文字列に例外内容が返されます。
  */
 public class AsyncTaskClass extends AsyncTask<InputStream, String, String> {
+    /**
+     * linearLayout.
+     */
+    @SuppressLint("StaticFieldLeak")
     private LinearLayout linearLayout;
+    /**
+     * progressBar.
+     */
+    @SuppressLint("StaticFieldLeak")
     private ProgressBar progressBar;
+    /**
+     * textView.
+     */
+    @SuppressLint("StaticFieldLeak")
     private TextView textView;
 
     /**
@@ -88,7 +101,6 @@ public class AsyncTaskClass extends AsyncTask<InputStream, String, String> {
         super.onPreExecute();
     }
 
-
     @Override
     protected String doInBackground(final InputStream... inputStreams) {
         try (BufferedReader reader = new BufferedReader(new InputStreamReader(inputStreams[0], encode))) {
@@ -120,7 +132,7 @@ public class AsyncTaskClass extends AsyncTask<InputStream, String, String> {
                 adapter.add(new Circle(name, "",
                         "https://dl.dropboxusercontent.com/s/3jab8zdsv36isam/gazo-.png",
                         strings[5], strings[7] + strings[8] + haiti, values[0],
-                        color.get(Integer.parseInt(strings[2]) - 1), false));
+                        color.get(Integer.parseInt(strings[2]) - 1), false, Integer.parseInt(strings[9]), strings[14]));
                 break;
             default:
         }
@@ -130,6 +142,7 @@ public class AsyncTaskClass extends AsyncTask<InputStream, String, String> {
     protected void onPostExecute(final String result) {
         progressBar.setVisibility(View.GONE);
         if (isComicMarketCsv) {
+            linearLayout.setVisibility(View.GONE);
             adapter.notifyDataSetChanged();
         } else {
             if (isOk.equals("OK")) {
@@ -140,6 +153,4 @@ public class AsyncTaskClass extends AsyncTask<InputStream, String, String> {
             }
         }
     }
-
-
 }
