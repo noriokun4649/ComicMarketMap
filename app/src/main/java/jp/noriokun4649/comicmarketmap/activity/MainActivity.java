@@ -18,6 +18,7 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.Gravity;
 import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -51,6 +52,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
      */
     private TwitterConnect twitterConnect = new TwitterConnect(this);
 
+    /**
+     * DrawerLayout横から出てくるメニューみたいなやつ.
+     */
+    private DrawerLayout drawer;
+
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
         LayoutInflaterCompat.setFactory2(getLayoutInflater(), new IconicsLayoutInflater2(getDelegate()));
@@ -61,7 +67,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        DrawerLayout drawer = findViewById(R.id.drawer_layout);
+        drawer = findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
@@ -229,14 +235,19 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         if (keyCode != KeyEvent.KEYCODE_BACK) {
             return super.onKeyDown(keyCode, event);
         } else {
-            FragmentCancelOKAlertDialog fragmentCancelOKAlertDialog = new FragmentCancelOKAlertDialog();
-            Bundle bundle = new Bundle();
-            bundle.putInt("title", 0);
-            bundle.putString("massage", getString(R.string.wat_close));
-            bundle.putInt("buttonName", R.string.close);
-            fragmentCancelOKAlertDialog.setArguments(bundle);
-            fragmentCancelOKAlertDialog.show(getSupportFragmentManager(), "app_close");
-            return false;
+            if (drawer.isDrawerOpen(GravityCompat.START)) {
+                FragmentCancelOKAlertDialog fragmentCancelOKAlertDialog = new FragmentCancelOKAlertDialog();
+                Bundle bundle = new Bundle();
+                bundle.putInt("title", 0);
+                bundle.putString("massage", getString(R.string.wat_close));
+                bundle.putInt("buttonName", R.string.close);
+                fragmentCancelOKAlertDialog.setArguments(bundle);
+                fragmentCancelOKAlertDialog.show(getSupportFragmentManager(), "app_close");
+                return false;
+            } else {
+                drawer.openDrawer(Gravity.START);
+                return false;
+            }
         }
     }
 
