@@ -58,6 +58,7 @@ dependencies {
     implementation 'com.mikepenz:google-material-typeface:3.0.1.2.original@aar'
     implementation 'com.mikepenz:materialize:1.1.2'
     implementation 'com.mikepenz:itemanimators:1.0.2@aar'
+    implementation 'io.realm:android-adapters:2.1.1'
     implementation 'org.twitter4j:twitter4j-core:4.0.7'
     implementation 'org.twitter4j:twitter4j-async:4.0.7'
     implementation 'uk.co.samuelwall:material-tap-target-prompt:2.12.1'
