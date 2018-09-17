@@ -11,6 +11,7 @@ import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.DialogFragment;
+import android.support.v7.app.AlertDialog;
 
 import jp.noriokun4649.comicmarketmap.R;
 
@@ -61,7 +62,7 @@ public class FragmentCancelOKAlertDialog extends DialogFragment {
     @NonNull
     @Override
     public Dialog onCreateDialog(final Bundle savedInstanceState) {
-        android.app.AlertDialog.Builder a = new android.app.AlertDialog.Builder(getContext());
+        AlertDialog.Builder a = new AlertDialog.Builder(getContext());
         a.setMessage(massage);
         if (title != 0) {
             a.setTitle(title);
