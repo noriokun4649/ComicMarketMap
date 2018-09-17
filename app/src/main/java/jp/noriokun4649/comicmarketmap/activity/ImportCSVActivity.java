@@ -66,8 +66,8 @@ public class ImportCSVActivity extends ImportBase {
     private AsyncTaskClass asyncTaskClass;
 
     @Override
-    void getListData(final AsyncTwitter asyncTwitter, final CircleListItemAdapter adapter, final int counts, final long id) {
-        this.adapter = adapter;
+    void getListData(final AsyncTwitter asyncTwitter, final CircleListItemAdapter adapters, final int counts, final long id) {
+        this.adapter = adapters;
         linearLayout = findViewById(R.id.progress);
         textView = findViewById(R.id.textView4);
         progressBar = findViewById(R.id.progressBar3);
@@ -85,8 +85,8 @@ public class ImportCSVActivity extends ImportBase {
     }
 
     @Override
-    public void onOKClick(final int dialogId, final int position, @Nullable final String returnMemo, final String tag) {
-        super.onOKClick(dialogId, position, returnMemo, tag);
+    public void onOKClick(final int dialogId, final int position, @Nullable final String returnMemo, final String tag, final String[] items) {
+        super.onOKClick(dialogId, position, returnMemo, tag, items);
     }
 
     @Override

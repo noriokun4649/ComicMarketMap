@@ -13,7 +13,6 @@ import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v4.view.LayoutInflaterCompat;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.AdapterView;
@@ -27,6 +26,7 @@ import com.mikepenz.iconics.context.IconicsLayoutInflater2;
 
 import java.util.ArrayList;
 
+import io.multimoon.colorful.CAppCompatActivity;
 import io.realm.Realm;
 import io.realm.RealmAsyncTask;
 import jp.noriokun4649.comicmarketmap.R;
@@ -44,7 +44,7 @@ import twitter4j.AsyncTwitter;
  * インポートアクティビティのベースです.
  * 様々なインポート方法ののちに表示されるユーザー結果を表示するさいに継承します。
  */
-abstract class ImportBase extends AppCompatActivity
+abstract class ImportBase extends CAppCompatActivity
         implements ColorPickerDialogFragment.ColorPickerDialogListener, DialogsListener {
 
     /**
@@ -72,7 +72,6 @@ abstract class ImportBase extends AppCompatActivity
         LayoutInflaterCompat.setFactory2(getLayoutInflater(), new IconicsLayoutInflater2(getDelegate()));
         super.onCreate(savedInstanceState);
         setContentView(R.layout.import_layout);
-        getSupportActionBar().hide();
         Intent intent = getIntent();
         int counts = intent.getIntExtra("count", 0);
         long id = intent.getLongExtra("listId", 0);
@@ -137,14 +136,14 @@ abstract class ImportBase extends AppCompatActivity
             }
         });
         FloatingActionButton fav = findViewById(R.id.fav_save);
-        fav.setImageDrawable(new IconicsDrawable(this, GoogleMaterial.Icon.gmd_save));
+        fav.setImageDrawable(new IconicsDrawable(this, GoogleMaterial.Icon.gmd_save).color(Color.WHITE));
         fav.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(final View v) {
                 realmAsyncTask = realm.executeTransactionAsync(
                         new Realm.Transaction() {
                             @Override
-                            public void execute(final Realm realm) {
+                            public void execute(final Realm realms) {
                                 final int count = adapter.getCount();
                                 for (int i = 0; i < count; i++) {
                                     final Circle circle = adapter.getItem(i);
@@ -161,7 +160,7 @@ abstract class ImportBase extends AppCompatActivity
                                     dbObject.setMemo(circle.getMemo());
                                     dbObject.setGenreCode(circle.getGenreCode());
                                     dbObject.setUrl(circle.getUrl());
-                                    realm.copyToRealmOrUpdate(dbObject);
+                                    realms.copyToRealmOrUpdate(dbObject);
                                 }
                             }
                         }, new Realm.Transaction.OnSuccess() {
@@ -242,7 +241,7 @@ abstract class ImportBase extends AppCompatActivity
     abstract int getLoadingText();
 
     @Override
-    public void onOKClick(final int dialogId, final int position, @Nullable final String returnMemo, final String tag) {
+    public void onOKClick(final int dialogId, final int position, @Nullable final String returnMemo, final String tag, final String[] items) {
         switch (tag) {
             case "edit":
                 Circle circle = adapter.getItem(position);

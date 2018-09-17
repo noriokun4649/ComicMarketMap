@@ -44,7 +44,7 @@ public class ImportBackupActivity extends ImportBase {
     }
 
     @Override
-    public void onOKClick(final int dialogId, final int position, @Nullable final String returnMemo, final String tag) {
+    public void onOKClick(final int dialogId, final int position, @Nullable final String returnMemo, final String tag, final String[] items) {
 
     }
 }

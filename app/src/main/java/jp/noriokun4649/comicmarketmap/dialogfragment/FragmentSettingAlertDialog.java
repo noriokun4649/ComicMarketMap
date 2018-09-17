@@ -52,13 +52,14 @@ public class FragmentSettingAlertDialog extends DialogFragment {
                 .setSingleChoiceItems(items, defaultItem, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(final DialogInterface dialog, final int which) {
+                        defaultItem = which;
                         mListener.onItemClick(which, getTag());
                     }
                 })
                 .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(final DialogInterface dialog, final int which) {
-                        mListener.onOKClick(0, getArguments().getInt("position"), null, getTag());
+                        mListener.onOKClick(defaultItem, getArguments().getInt("position"), null, getTag(), items);
                     }
                 })
                 .setNegativeButton(R.string.cancel, null);

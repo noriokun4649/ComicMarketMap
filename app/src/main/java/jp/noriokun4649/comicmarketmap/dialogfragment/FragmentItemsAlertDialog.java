@@ -55,7 +55,7 @@ public class FragmentItemsAlertDialog extends DialogFragment {
         builder.setItems(a, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(final DialogInterface dialog, final int which) {
-                mListener.onOKClick(which, position, null, getTag());
+                mListener.onOKClick(which, position, null, getTag(), null);
             }
         });
         return builder.create();

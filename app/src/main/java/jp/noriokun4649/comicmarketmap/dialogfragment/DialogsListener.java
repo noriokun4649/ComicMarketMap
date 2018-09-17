@@ -21,12 +21,13 @@ public interface DialogsListener {
     /**
      * クリックしたさいに呼ばれるアクション.
      *
-     * @param dialogId  ダイアログのID
-     * @param position    ポジション
+     * @param dialogId   ダイアログのID
+     * @param position   ポジション
      * @param returnMemo memoに関するダイアログの場合は編集後のメモ内容
-     * @param tag       ダイアログのタグです
+     * @param tag        ダイアログのタグです
+     * @param items      アイテムす
      */
-    void onOKClick(int dialogId, int position, @Nullable String returnMemo, String tag);
+    void onOKClick(int dialogId, int position, @Nullable String returnMemo, String tag, String[] items);
 
 
 }

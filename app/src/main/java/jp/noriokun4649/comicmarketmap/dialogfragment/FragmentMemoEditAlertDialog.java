@@ -71,7 +71,7 @@ public class FragmentMemoEditAlertDialog extends DialogFragment {
                 .setView(layout)
                 .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                     public void onClick(final DialogInterface dialog, final int whichButton) {
-                        mListener.onOKClick(0, position, editText.getText().toString(), getTag());
+                        mListener.onOKClick(0, position, editText.getText().toString(), getTag(), null);
                     }
                 })
                 .setNegativeButton(R.string.cancel, null);
