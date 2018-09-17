@@ -10,7 +10,6 @@ import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.annotation.Nullable;
 import android.support.v4.view.LayoutInflaterCompat;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.AdapterView;
@@ -24,29 +23,25 @@ import com.mikepenz.iconics.context.IconicsLayoutInflater2;
 
 import java.util.ArrayList;
 
+import io.multimoon.colorful.CAppCompatActivity;
+import io.multimoon.colorful.ColorfulKt;
 import jp.noriokun4649.comicmarketmap.R;
 import jp.noriokun4649.comicmarketmap.dialogfragment.DialogsListener;
 import jp.noriokun4649.comicmarketmap.dialogfragment.FragmentSettingAlertDialog;
 import jp.noriokun4649.comicmarketmap.list.Setting;
 import jp.noriokun4649.comicmarketmap.list.SettingItemAdapter;
+import kotlin.Unit;
+import kotlin.jvm.functions.Function0;
 
 /**
  * 設定のアクティビティ.
  */
-public class SettingActivity extends AppCompatActivity implements DialogsListener {
+public class SettingActivity extends CAppCompatActivity implements DialogsListener {
 
-    /**
-     * アイテムのインデックス.
-     */
-    private int itemResultPosition;
     /**
      * アダプタ.
      */
     private SettingItemAdapter adapter;
-    /**
-     * 設定項目のタイプがチェックボックスじゃない際の、設定Listを入れておく配列.
-     */
-    private String[] items;
     /**
      * 設定項目をいれておくやーつ.
      * 簡単に設定をいれたり、呼び出したりできるから便利なやーつ.
@@ -57,8 +52,8 @@ public class SettingActivity extends AppCompatActivity implements DialogsListene
     protected void onCreate(@Nullable final Bundle savedInstanceState) {
         LayoutInflaterCompat.setFactory2(getLayoutInflater(), new IconicsLayoutInflater2(getDelegate()));
         super.onCreate(savedInstanceState);
+        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
         setContentView(R.layout.setting_layout);
-        getSupportActionBar().hide();
         final Toolbar toolbar = findViewById(R.id.toolbar3);
         toolbar.setTitle(getString(R.string.Setting));
         toolbar.setTitleTextColor(Color.WHITE);
@@ -69,7 +64,6 @@ public class SettingActivity extends AppCompatActivity implements DialogsListene
                 finish();
             }
         });
-        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
         editor = sharedPreferences.edit();
         final String[] items2 = new String[]{"サークル名", "執筆者名"};
         final String[] items3 = new String[]{"曜日", "日付", "回目"};
@@ -105,6 +99,7 @@ public class SettingActivity extends AppCompatActivity implements DialogsListene
                         }
                         break;
                     default:
+                        String[] items;
                         switch (position) {
                             case 2:
                                 items = items2;
@@ -125,7 +120,6 @@ public class SettingActivity extends AppCompatActivity implements DialogsListene
                         int def = setting.getIndex();
                         FragmentSettingAlertDialog alertDialogFragment = new FragmentSettingAlertDialog();
                         Bundle bundle = new Bundle();
-                        itemResultPosition = def;
                         bundle.putInt("defaultItem", def);
                         bundle.putStringArray("items", items);
                         bundle.putInt("position", position);
@@ -138,17 +132,27 @@ public class SettingActivity extends AppCompatActivity implements DialogsListene
 
     @Override
     public void onItemClick(final int which, final String tag) {
-        itemResultPosition = which;
+
     }
 
-
     @Override
-    public void onOKClick(final int dialogId, final int position, final @Nullable String returnMemo, final String tag) {
+    public void onOKClick(final int dialogId, final int position, @Nullable final String returnMemo, final String tag, final String[] items) {
         Setting setting = adapter.getItem(position);
-        setting.setIndex(itemResultPosition);
-        setting.setNow(items[itemResultPosition]);
+        setting.setIndex(dialogId);
+        setting.setNow(items[dialogId]);
         adapter.notifyDataSetChanged();
-        editor.putInt("setting" + position, itemResultPosition).apply();
+        editor.putInt("setting" + position, dialogId).commit();
+        if (position == 6) {
+            ColorfulKt.Colorful().edit()
+                    .setDarkTheme(dialogId != 0)
+                    .apply(this, new Function0<Unit>() {
+                        @Override
+                        public Unit invoke() {
+                            recreate();
+                            return null;
+                        }
+                    });
+        }
         //Log.d("checkedItem:", "" + checkedItems.get(0));
     }
 }

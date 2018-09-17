@@ -4,23 +4,27 @@
 
 package jp.noriokun4649.comicmarketmap;
 
-import android.app.Application;
+import android.support.multidex.MultiDexApplication;
 
 import com.beardedhen.androidbootstrap.TypefaceProvider;
 
+import io.multimoon.colorful.ColorfulKt;
+import io.multimoon.colorful.Defaults;
+import io.multimoon.colorful.ThemeColor;
 import io.realm.Realm;
 import io.realm.RealmConfiguration;
 
 /**
  * アプリが実行された際に1回のみ処理される初期化処理.
  */
-public class MyApp extends Application {
+public class MyApp extends MultiDexApplication {
     @Override
     public void onCreate() {
         super.onCreate();
         TypefaceProvider.registerDefaultIconSets();
         Realm.init(this);
         RealmConfiguration configuration = new RealmConfiguration.Builder().name("noriokunrealm.realm").build();
-
+        Defaults defaults = new Defaults(ThemeColor.GREEN, ThemeColor.BLUE, false, false, 0);
+        ColorfulKt.initColorful(this, defaults);
     }
 }

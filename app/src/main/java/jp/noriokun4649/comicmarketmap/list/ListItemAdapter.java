@@ -19,6 +19,7 @@ import com.mikepenz.iconics.view.IconicsImageView;
 
 import java.util.List;
 
+import io.multimoon.colorful.ColorfulKt;
 import jp.noriokun4649.comicmarketmap.R;
 
 /**
@@ -34,8 +35,8 @@ public class ListItemAdapter extends ArrayAdapter<Import> {
     /**
      * コンストラクタ.
      *
-     * @param context  コンテキスト
-     * @param objects  リストViewで使用する情報のひな型
+     * @param context コンテキスト
+     * @param objects リストViewで使用する情報のひな型
      */
     public ListItemAdapter(@NonNull final Context context, @NonNull final List<Import> objects) {
         super(context, 0, objects);
@@ -52,7 +53,8 @@ public class ListItemAdapter extends ArrayAdapter<Import> {
         }
         Import i = getItem(position);
         IconicsImageView iconicsImageView = view.findViewById(R.id.image_icon);
-        iconicsImageView.setIcon(new IconicsDrawable(getContext(), i.getiIcon()).sizeDp(21).color(R.color.colorPrimaryDark));
+        int color = ColorfulKt.Colorful().getAccentColor().getColorPack().normal().asInt();
+        iconicsImageView.setIcon(new IconicsDrawable(getContext(), i.getiIcon()).sizeDp(21).color(color));
         TextView textView = view.findViewById(R.id.text_listname);
         textView.setText(i.getName());
         return view;

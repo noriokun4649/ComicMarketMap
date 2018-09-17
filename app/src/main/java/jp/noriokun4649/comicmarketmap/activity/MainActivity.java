@@ -16,7 +16,6 @@ import android.support.v4.view.GravityCompat;
 import android.support.v4.view.LayoutInflaterCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Gravity;
 import android.view.KeyEvent;
@@ -31,6 +30,8 @@ import com.mikepenz.iconics.Iconics;
 import com.mikepenz.iconics.IconicsDrawable;
 import com.mikepenz.iconics.context.IconicsLayoutInflater2;
 
+import io.multimoon.colorful.CAppCompatActivity;
+import io.multimoon.colorful.ColorfulKt;
 import jp.noriokun4649.comicmarketmap.R;
 import jp.noriokun4649.comicmarketmap.dialogfragment.DialogsListener;
 import jp.noriokun4649.comicmarketmap.dialogfragment.FragmentCancelOKAlertDialog;
@@ -46,7 +47,7 @@ import static android.content.DialogInterface.BUTTON_POSITIVE;
 /**
  * メインのアクティビティ.
  */
-public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, DialogsListener {
+public class MainActivity extends CAppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, DialogsListener {
     /**
      * Twitterのインスタンス.
      */
@@ -114,9 +115,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     @Override
     public void onBackPressed() {
-        DrawerLayout drawer = findViewById(R.id.drawer_layout);
-        if (drawer.isDrawerOpen(GravityCompat.START)) {
-            drawer.closeDrawer(GravityCompat.START);
+        DrawerLayout drawerd = findViewById(R.id.drawer_layout);
+        if (drawerd.isDrawerOpen(GravityCompat.START)) {
+            drawerd.closeDrawer(GravityCompat.START);
         } else {
             super.onBackPressed();
         }
@@ -174,10 +175,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 startActivity(new Intent(MainActivity.this, SettingActivity.class));
                 break;
             case R.id.nav_oss:
+                Libs.ActivityStyle activityStyle = Libs.ActivityStyle.LIGHT_DARK_TOOLBAR;
+                if (ColorfulKt.Colorful().getDarkTheme()) {
+                    activityStyle = Libs.ActivityStyle.DARK;
+                }
                 startActivity(new LibsBuilder()
                         .withFields(R.string.class.getFields())
                         .withActivityTitle(getString(R.string.Oss))
-                        .withActivityStyle(Libs.ActivityStyle.LIGHT_DARK_TOOLBAR)
+                        .withActivityStyle(activityStyle)
                         .withAboutDescription(getString(R.string.thisoss))
                         .withLibraries("imagelayout", "leaflet", "colorpickerview", "twitter4j", "realm", "realm_java", "android_bootstrap", "cryptore")
                         .withLicenseShown(true)
@@ -188,8 +193,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 break;
             default:
         }
-        DrawerLayout drawer = findViewById(R.id.drawer_layout);
-        drawer.closeDrawer(GravityCompat.START);
+        DrawerLayout drawerd = findViewById(R.id.drawer_layout);
+        drawerd.closeDrawer(GravityCompat.START);
         fragmentTransaction.commit();
         return true;
     }
@@ -268,7 +273,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     @Override
     public void onOKClick(final int dialogId, final int position,
-                          @Nullable final String returnMemo, final String tag) {
+                          @Nullable final String returnMemo, final String tag, final String[] items) {
     }
-
 }
