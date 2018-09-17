@@ -27,7 +27,7 @@ public class CircleListFragment extends Fragment {
         View view = inflater.inflate(R.layout.circle_list_layout, container, false);
         Toolbar toolbar = getActivity().findViewById(R.id.toolbar);
         toolbar.setTitle(getString(R.string.CircleList));
-
+        toolbar.getMenu().clear();
         return view;
 
     }

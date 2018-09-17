@@ -61,6 +61,7 @@ public class CircleListImportFragment extends Fragment {
         new MaterializeBuilder().withActivity(getActivity()).build();
         Toolbar toolbar = getActivity().findViewById(R.id.toolbar);
         toolbar.setTitle(getString(R.string.CircleListImport));
+        toolbar.getMenu().clear();
         ListView listView = view.findViewById(R.id.list);
         ArrayList<Import> imports = new ArrayList<>();
         Import twitter = new Import(CommunityMaterial.Icon.cmd_twitter, getString(R.string.twitter_conect));

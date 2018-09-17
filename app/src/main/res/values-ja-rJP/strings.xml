@@ -76,4 +76,7 @@
     <string name="file_import_error">データエラー:カタロムCSVファイルでない可能性があります</string>
     <string name="load_error_detanotfound">読み込みエラー....\n\n!!!データが見つかりませんでした!!!</string>
     <string name="loadding_now">読み込み中....</string>
+    <string name="sort">ソート</string>
+    <string name="search">検索</string>
+    <string name="no_data">サークルリストが見つかりません!\n\nサークルリストをインポートするか、右下のボタンから追加してください。</string>
 </resources>

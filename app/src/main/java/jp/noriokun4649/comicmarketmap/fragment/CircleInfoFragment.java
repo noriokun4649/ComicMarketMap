@@ -27,7 +27,7 @@ public class CircleInfoFragment extends Fragment {
         View view = inflater.inflate(R.layout.circle_info_layout, container, false);
         Toolbar toolbar = getActivity().findViewById(R.id.toolbar);
         toolbar.setTitle(getString(R.string.CircleInfo));
-
+        toolbar.getMenu().clear();
         return view;
 
     }

@@ -76,5 +76,8 @@
     <string name="file_import_error">Data error: It may not be a catalog CSV file</string>
     <string name="load_error_detanotfound">LOAD ERROR....\n\n!!!! Data not found !!!!</string>
     <string name="loadding_now">Loading now....</string>
+    <string name="sort">Sort</string>
+    <string name="search">search</string>
+    <string name="no_data">Data Not found!\n\nPlease import circle list or add it from the button in the lower right.</string>
 
 </resources>

@@ -41,6 +41,7 @@ public class MapFragment extends Fragment {
         View view = inflater.inflate(R.layout.map_layout, container, false);
         Toolbar toolbar = getActivity().findViewById(R.id.toolbar);
         toolbar.setTitle(getString(R.string.Map));
+        toolbar.getMenu().clear();
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getContext());
         //final SharedPreferences.Editor editor = sharedPreferences.edit();
         WebView webView = view.findViewById(R.id.web);
