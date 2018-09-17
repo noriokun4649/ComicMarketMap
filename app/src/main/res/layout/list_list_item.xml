@@ -6,10 +6,8 @@
 
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/about_libraries_card"
     android:clickable="false"
     android:focusable="false">
 
@@ -62,13 +60,13 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:clickable="false"
+                android:contentDescription="@string/icon"
                 android:focusable="false"
                 android:padding="8dp"
                 android:scaleType="fitXY"
                 app:layout_constraintBottom_toTopOf="@+id/view"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                android:contentDescription="@string/icon" />
+                app:layout_constraintTop_toTopOf="parent" />
 
             <View
                 android:id="@+id/view"
