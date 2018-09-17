@@ -11,7 +11,6 @@ import android.os.Handler;
 import android.support.annotation.Nullable;
 import android.support.design.widget.Snackbar;
 import android.support.v4.view.LayoutInflaterCompat;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.AdapterView;
@@ -24,6 +23,7 @@ import com.mikepenz.iconics.context.IconicsLayoutInflater2;
 
 import java.util.ArrayList;
 
+import io.multimoon.colorful.CAppCompatActivity;
 import jp.noriokun4649.comicmarketmap.R;
 import jp.noriokun4649.comicmarketmap.list.ListList;
 import jp.noriokun4649.comicmarketmap.list.ListListItemAdapter;
@@ -40,7 +40,7 @@ import twitter4j.UserList;
  * リストからインポートする際のアクティビティです.
  * こっちはリストの一覧が出る
  */
-public class ImportListListActivity extends AppCompatActivity {
+public class ImportListListActivity extends CAppCompatActivity {
     /**
      * ハンドラー.
      * このインスタンスを通して、じゃないとアプリの画面等を操作できません.
@@ -68,7 +68,6 @@ public class ImportListListActivity extends AppCompatActivity {
                 finish();
             }
         });
-        getSupportActionBar().hide();
         final ArrayList<ListList> listList = new ArrayList<>();
         adapter = new ListListItemAdapter(this, listList);
         final ListView listView = findViewById(R.id.list_import_list);
@@ -92,7 +91,6 @@ public class ImportListListActivity extends AppCompatActivity {
                             adapter.add(listList1);
                             adapter.notifyDataSetChanged();
                         }
-                        linearLayout.setVisibility(View.GONE);
                     }
                 });
             }
@@ -102,8 +100,8 @@ public class ImportListListActivity extends AppCompatActivity {
                 mHandler.post(new Runnable() {
                     @Override
                     public void run() {
-                        linearLayout.setVisibility(View.GONE);
-                        Snackbar snackbar = Snackbar.make(getCurrentFocus(), R.string.api_limit, Snackbar.LENGTH_LONG).setAction(R.string.close, new View.OnClickListener() {
+                        final ListView layout = findViewById(R.id.list_import_list);
+                        Snackbar snackbar = Snackbar.make(layout, R.string.api_limit, Snackbar.LENGTH_LONG).setAction(R.string.close, new View.OnClickListener() {
                             @Override
                             public void onClick(final View v) {
                                 finish();
@@ -126,5 +124,6 @@ public class ImportListListActivity extends AppCompatActivity {
 
             }
         });
+        listView.setEmptyView(linearLayout);
     }
 }
