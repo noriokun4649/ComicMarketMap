@@ -124,21 +124,21 @@
     <!-- License section -->
     <string name="library_android_bootstrap_licenseId" translatable="false">mit</string>
 
-    <string name="define_int_cryptore"></string>
+    <string name="define_int_cryptore" translatable="false"></string>
     <!-- Author section -->
-    <string name="library_cryptore_author">KazaKago</string>
-    <string name="library_cryptore_authorWebsite">https://kazakago.hatenablog.jp/</string>
+    <string name="library_cryptore_author" translatable="false">KazaKago</string>
+    <string name="library_cryptore_authorWebsite" translatable="false">https://kazakago.hatenablog.jp/</string>
     <!-- Library section -->
-    <string name="library_cryptore_libraryName">Cryptore</string>
-    <string name="library_cryptore_libraryDescription">This library performs encryption and decryption byte array using Android KeyStore System.</string>
-    <string name="library_cryptore_libraryWebsite">https://github.com/KazaKago/Cryptore</string>
-    <string name="library_cryptore_libraryVersion">1.3.0</string>
+    <string name="library_cryptore_libraryName" translatable="false">Cryptore</string>
+    <string name="library_cryptore_libraryDescription" translatable="false">This library performs encryption and decryption byte array using Android KeyStore System.</string>
+    <string name="library_cryptore_libraryWebsite" translatable="false">https://github.com/KazaKago/Cryptore</string>
+    <string name="library_cryptore_libraryVersion" translatable="false">1.3.0</string>
     <!-- OpenSource section -->
-    <string name="library_cryptore_isOpenSource">true</string>
-    <string name="library_cryptore_repositoryLink">https://github.com/KazaKago/Cryptore</string>
+    <string name="library_cryptore_isOpenSource" translatable="false">true</string>
+    <string name="library_cryptore_repositoryLink" translatable="false">https://github.com/KazaKago/Cryptore</string>
     <!-- ClassPath for autoDetect section -->
-    <string name="library_cryptore_classPath"></string>
+    <string name="library_cryptore_classPath" translatable="false"></string>
     <!-- License section -->
-    <string name="library_cryptore_licenseId">mit</string>
+    <string name="library_cryptore_licenseId" translatable="false">mit</string>
     <!-- Custom variables section -->
 </resources>
