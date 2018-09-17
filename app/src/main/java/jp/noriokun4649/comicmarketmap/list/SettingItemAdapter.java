@@ -34,8 +34,8 @@ public class SettingItemAdapter extends ArrayAdapter<Setting> {
     /**
      * コンストラクタ.
      *
-     * @param context  コンテキスト
-     * @param objects  リストViewで使用する情報のひな型
+     * @param context コンテキスト
+     * @param objects リストViewで使用する情報のひな型
      */
     public SettingItemAdapter(@NonNull final Context context, @NonNull final List<Setting> objects) {
         super(context, 0, objects);

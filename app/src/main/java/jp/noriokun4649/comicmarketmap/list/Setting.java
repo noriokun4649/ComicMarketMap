@@ -56,10 +56,10 @@ public class Setting {
      * コンストラクタ.
      * 設定のListViewで追加する項目がチェックボックスの際に使用されるコンストラクタ
      *
-     * @param title 設定項目のタイトル
-     * @param checkBoxNow  チェックボックスの初期状態
-     * @param info  設定項目の詳細情報
-     * @param mode  チェックボックスを表示
+     * @param title       設定項目のタイトル
+     * @param checkBoxNow チェックボックスの初期状態
+     * @param info        設定項目の詳細情報
+     * @param mode        チェックボックスを表示
      */
     public Setting(final String title, final boolean checkBoxNow, final String info, final boolean mode) {
         this.title = title;

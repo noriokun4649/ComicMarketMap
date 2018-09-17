@@ -310,22 +310,22 @@ public class Circle {
 
     /**
      * サークルの壁サークルかどうかを設定するメソッド.
-     * パラメータがString型の場合パラメータの情報に基づいて、壁サークルかどうかを判断し、代入
-     *
-     * @param wall そのサークルのブロック情報
-     */
-    public void setWall(final String wall) {
-        this.isWall = getCircleSpaceInfo.isWall(wall);
-    }
-
-    /**
-     * サークルの壁サークルかどうかを設定するメソッド.
      * パラメータがboole型の場合直接設定する
      *
      * @param wall trueの場合は壁サークル、falseの場合は壁サークルではない。
      */
     public void setWall(final boolean wall) {
         this.isWall = wall;
+    }
+
+    /**
+     * サークルの壁サークルかどうかを設定するメソッド.
+     * パラメータがString型の場合パラメータの情報に基づいて、壁サークルかどうかを判断し、代入
+     *
+     * @param wall そのサークルのブロック情報
+     */
+    public void setWall(final String wall) {
+        this.isWall = getCircleSpaceInfo.isWall(wall);
     }
 
     /**
