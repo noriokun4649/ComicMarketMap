@@ -141,21 +141,21 @@
     <!-- License section -->
     <string name="library_cryptore_licenseId" translatable="false">mit</string>
     <!-- Custom variables section -->
-    <string name="define_int_colorful"></string>
+    <string name="define_int_colorful" translatable="false"></string>
     <!-- Author section -->
-    <string name="library_colorful_author">garretyoder</string>
-    <string name="library_colorful_authorWebsite">https://github.com/garretyoder/Colorful</string>
+    <string name="library_colorful_author" translatable="false">garretyoder</string>
+    <string name="library_colorful_authorWebsite" translatable="false">https://github.com/garretyoder/Colorful</string>
     <!-- Library section -->
-    <string name="library_colorful_libraryName">Colorful</string>
-    <string name="library_colorful_libraryDescription">Colorful is a dynamic theme library allowing you to change your apps' color schemes easily.  Colorful v2 is here! v2 has been rewritten from the ground up in Kotlin to be lighter, faster, and more feature-packed</string>
-    <string name="library_colorful_libraryWebsite">https://github.com/garretyoder/Colorful</string>
-    <string name="library_colorful_libraryVersion">2.3.4</string>
+    <string name="library_colorful_libraryName" translatable="false">Colorful</string>
+    <string name="library_colorful_libraryDescription" translatable="false">Colorful is a dynamic theme library allowing you to change your apps' color schemes easily.  Colorful v2 is here! v2 has been rewritten from the ground up in Kotlin to be lighter, faster, and more feature-packed</string>
+    <string name="library_colorful_libraryWebsite" translatable="false">https://github.com/garretyoder/Colorful</string>
+    <string name="library_colorful_libraryVersion" translatable="false">2.3.4</string>
     <!-- OpenSource section -->
-    <string name="library_colorful_isOpenSource">true</string>
-    <string name="library_colorful_repositoryLink">https://github.com/garretyoder/Colorful</string>
+    <string name="library_colorful_isOpenSource" translatable="false">true</string>
+    <string name="library_colorful_repositoryLink" translatable="false">https://github.com/garretyoder/Colorful</string>
     <!-- ClassPath for autoDetect section -->
-    <string name="library_colorful_classPath"></string>
+    <string name="library_colorful_classPath" translatable="false"></string>
     <!-- License section -->
-    <string name="library_colorful_licenseId">apache_2_0</string>
+    <string name="library_colorful_licenseId" translatable="false">apache_2_0</string>
     <!-- Custom variables section -->
 </resources>

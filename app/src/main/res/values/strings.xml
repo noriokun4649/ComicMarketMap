@@ -79,5 +79,17 @@
     <string name="sort">Sort</string>
     <string name="search">search</string>
     <string name="no_data">Data Not found!\n\nPlease import circle list or add it from the button in the lower right.</string>
+    <string name="secure_import">The imported data was successfully saved</string>
+    <string name="error_import">There was an error saving data</string>
+    <string name="circle_name">Circle name</string>
+    <string name="author_name">Author name</string>
+    <string name="day_of_the_week">Day of the week</string>
+    <string name="data">Data</string>
+    <string name="number_of_times">Number of times</string>
+    <string name="open_map">Open Map</string>
+    <string name="checked_purchased">Checked purchased</string>
+    <string name="always_listen">Always Listen</string>
+    <string name="normal">Normal</string>
+    <string name="nighttime">Nighttime</string>
 
 </resources>

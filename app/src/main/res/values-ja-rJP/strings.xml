@@ -79,4 +79,16 @@
     <string name="sort">ソート</string>
     <string name="search">検索</string>
     <string name="no_data">サークルリストが見つかりません!\n\nサークルリストをインポートするか、右下のボタンから追加してください。</string>
+    <string name="secure_import">インポートされたデータを正常に保存しました</string>
+    <string name="error_import">データの保存にエラーが発生しました</string>
+    <string name="circle_name">サークル名</string>
+    <string name="author_name">執筆者名</string>
+    <string name="day_of_the_week">曜日</string>
+    <string name="data">日付</string>
+    <string name="number_of_times">回目</string>
+    <string name="open_map">マップを開く</string>
+    <string name="checked_purchased">購入済みにする</string>
+    <string name="always_listen">常に聞く</string>
+    <string name="normal">通常</string>
+    <string name="nighttime">始発組(夜間)</string>
 </resources>

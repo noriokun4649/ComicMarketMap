@@ -65,10 +65,10 @@ public class SettingActivity extends CAppCompatActivity implements DialogsListen
             }
         });
         editor = sharedPreferences.edit();
-        final String[] items2 = new String[]{"サークル名", "執筆者名"};
-        final String[] items3 = new String[]{"曜日", "日付", "回目"};
-        final String[] items45 = new String[]{"マップを開く", "Twitterを開く", "購入済みにする", "常に聞く"};
-        final String[] items6 = new String[]{"通常", "始発組(夜間)"};
+        final String[] items2 = new String[]{getString(R.string.circle_name), getString(R.string.author_name)};
+        final String[] items3 = new String[]{getString(R.string.day_of_the_week), getString(R.string.data), getString(R.string.number_of_times)};
+        final String[] items45 = new String[]{getString(R.string.open_map), getString(R.string.open_twitter), getString(R.string.checked_purchased), getString(R.string.always_listen)};
+        final String[] items6 = new String[]{getString(R.string.normal), getString(R.string.nighttime)};
         final String[] defo = new String[]{"こかこーら", "ぺぷしこーら", "めっつこーら", "こーらきらい"};
         ListView listView = findViewById(R.id.list_setting);
         ArrayList<Setting> settings = new ArrayList<>();

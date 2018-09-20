@@ -167,13 +167,13 @@ abstract class ImportBase extends CAppCompatActivity
                             @Override
                             public void onSuccess() {
                                 CoordinatorLayout layout = findViewById(R.id.coord);
-                                Snackbar.make(layout, "インポートされたデータを正常に保存しました", Snackbar.LENGTH_LONG).show();
+                                Snackbar.make(layout, R.string.secure_import, Snackbar.LENGTH_LONG).show();
                             }
                         }, new Realm.Transaction.OnError() {
                             @Override
                             public void onError(final Throwable error) {
                                 CoordinatorLayout layout = findViewById(R.id.coord);
-                                Snackbar.make(layout, "データの保存にエラーが発生しました", Snackbar.LENGTH_INDEFINITE).show();
+                                Snackbar.make(layout, R.string.error_import, Snackbar.LENGTH_INDEFINITE).show();
                             }
                         }
                 );
