@@ -5,8 +5,10 @@
 package jp.noriokun4649.comicmarketmap.activity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.design.widget.NavigationView;
@@ -67,6 +69,8 @@ public class MainActivity extends CAppCompatActivity implements NavigationView.O
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         Toolbar toolbar = findViewById(R.id.toolbar);
+        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+        toolbar.setPopupTheme(sharedPreferences.getInt("setting6", 0) == 0 ? R.style.Colorful_AppCompat_Light : R.style.Colorful_AppCompat_Dark);
         setSupportActionBar(toolbar);
         drawer = findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -184,7 +188,8 @@ public class MainActivity extends CAppCompatActivity implements NavigationView.O
                         .withActivityTitle(getString(R.string.Oss))
                         .withActivityStyle(activityStyle)
                         .withAboutDescription(getString(R.string.thisoss))
-                        .withLibraries("imagelayout", "leaflet", "colorpickerview", "twitter4j", "realm", "realm_java", "android_bootstrap", "cryptore")
+                        .withLibraries("imagelayout", "leaflet", "colorpickerview", "twitter4j",
+                                "realm_java", "android_bootstrap", "cryptore", "colorful")
                         .withLicenseShown(true)
                         .withAboutIconShown(true)
                         .withVersionShown(true)

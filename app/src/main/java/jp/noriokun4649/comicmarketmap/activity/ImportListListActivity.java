@@ -61,7 +61,8 @@ public class ImportListListActivity extends CAppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         toolbar.setTitle(R.string.list_import);
         toolbar.setTitleTextColor(Color.WHITE);
-        toolbar.setNavigationIcon(new IconicsDrawable(this, GoogleMaterial.Icon.gmd_arrow_back).sizeDp(16).color(Color.WHITE));
+        toolbar.setNavigationIcon(new IconicsDrawable(this,
+                GoogleMaterial.Icon.gmd_arrow_back).sizeDp(16).color(Color.WHITE));
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(final View v) {
@@ -87,7 +88,10 @@ public class ImportListListActivity extends CAppCompatActivity {
                     @Override
                     public void run() {
                         for (UserList list : userLists) {
-                            ListList listList1 = new ListList(list.getName(), list.getMemberCount(), list.getId(), list.getUser().getName(), list.getUser().get400x400ProfileImageURL(), list.getDescription(), list.isPublic());
+                            ListList listList1 = new ListList(list.getName(), list.getMemberCount(),
+                                    list.getId(), list.getUser().getName(),
+                                    list.getUser().get400x400ProfileImageURL(),
+                                    list.getDescription(), list.isPublic());
                             adapter.add(listList1);
                             adapter.notifyDataSetChanged();
                         }

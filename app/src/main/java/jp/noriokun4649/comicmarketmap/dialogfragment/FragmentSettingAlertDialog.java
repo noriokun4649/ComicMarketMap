@@ -53,6 +53,7 @@ public class FragmentSettingAlertDialog extends DialogFragment {
                     @Override
                     public void onClick(final DialogInterface dialog, final int which) {
                         defaultItem = which;
+                        getArguments().putInt("defaultItem", which);
                         mListener.onItemClick(which, getTag());
                     }
                 })

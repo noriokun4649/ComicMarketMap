@@ -24,7 +24,7 @@ public class MyApp extends MultiDexApplication {
         TypefaceProvider.registerDefaultIconSets();
         Realm.init(this);
         RealmConfiguration configuration = new RealmConfiguration.Builder().name("noriokunrealm.realm").build();
-        Defaults defaults = new Defaults(ThemeColor.GREEN, ThemeColor.BLUE, false, false, 0);
+        Defaults defaults = new Defaults(ThemeColor.BLUE, ThemeColor.GREEN, false, false, 0);
         ColorfulKt.initColorful(this, defaults);
     }
 }
