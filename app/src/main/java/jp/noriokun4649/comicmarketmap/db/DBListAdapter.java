@@ -2,6 +2,7 @@ package jp.noriokun4649.comicmarketmap.db;
 
 import android.graphics.Color;
 import android.support.annotation.Nullable;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.CardView;
 import android.util.TypedValue;
 import android.view.LayoutInflater;
@@ -60,7 +61,7 @@ public class DBListAdapter extends RealmBaseAdapter<DBObject> implements ListAda
         TypedValue typedValue = new TypedValue();
         parent.getContext().getTheme().resolveAttribute(android.R.attr.colorForeground, typedValue, true);
         int resourceId = typedValue.resourceId;
-        int colors = parent.getContext().getResources().getColor(resourceId);
+        int colors = ContextCompat.getColor(parent.getContext(), resourceId);
         int color = i.getIsWall() ? Color.RED : colors;
         textDay.setTextColor(color);
         textSpace.setTextColor(color);
