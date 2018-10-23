@@ -23,8 +23,7 @@ import jp.noriokun4649.comicmarketmap.glide.MyGlideApp;
 /**
  * Realmデータベースの情報を表示する際のリストView用Adapterです.
  */
-public class DBListAdapter extends RealmBaseAdapter<DBObject> implements ListAdapter {
-
+public class DBListAdapter extends DBAdapter {
     /**
      * コンストラクタ.
      *
@@ -35,56 +34,12 @@ public class DBListAdapter extends RealmBaseAdapter<DBObject> implements ListAda
     }
 
     @Override
-    public View getView(final int position, final View convertView, final ViewGroup parent) {
-        View view = convertView;
-        if (view == null) {
-            view = LayoutInflater.from(parent.getContext()).inflate(R.layout.circle_list_item, parent, false);
-        }
-        DBObject i = getItem(position);
-        TextView textName = view.findViewById(R.id.text_name);
-        TextView textDay = view.findViewById(R.id.text_day);
-        TextView textMemo = view.findViewById(R.id.text_memo);
-        TextView textTwitter = view.findViewById(R.id.text_twitter);
-        TextView textSpace = view.findViewById(R.id.text_space);
-        ImageView imageColor = view.findViewById(R.id.image_color);
-        ImageView imageIcon = view.findViewById(R.id.image_icon);
-        BootstrapButton colorButton = view.findViewById(R.id.color_button);
-        BootstrapButton memoButton = view.findViewById(R.id.memo_button);
-        CardView cardView = view.findViewById(R.id.card);
-        textDay.setText(i.getDay());
-        textName.setText(i.getUserName());
-        String twitterMassage = "{cmd-twitter} " + i.getScreenName();
-        textTwitter.setText(twitterMassage);
-        textMemo.setText(i.getMemo());
-        String spaceMassage = i.getHall() + "\n" + i.getBlock();
-        textSpace.setText(spaceMassage);
-        TypedValue typedValue = new TypedValue();
-        parent.getContext().getTheme().resolveAttribute(android.R.attr.colorForeground, typedValue, true);
-        int resourceId = typedValue.resourceId;
-        int colors = ContextCompat.getColor(parent.getContext(), resourceId);
-        int color = i.getIsWall() ? Color.RED : colors;
-        textDay.setTextColor(color);
-        textSpace.setTextColor(color);
-        imageColor.setBackgroundColor(i.getColor());
-        MyGlideApp.with(view).load(i.getIconUrl()).circleCrop().into(imageIcon);
-        memoButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(final View v) {
-                ((ListView) parent).performItemClick(v, position, R.id.memo_button);
-            }
-        });
-        colorButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(final View v) {
-                ((ListView) parent).performItemClick(v, position, R.id.color_button);
-            }
-        });
-        cardView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(final View v) {
-                ((ListView) parent).performItemClick(v, position, R.id.card);
-            }
-        });
-        return view;
+    int getMemoText() {
+        return R.string.memo_edit;
+    }
+
+    @Override
+    int getColorText() {
+        return R.string.color_edit;
     }
 }
