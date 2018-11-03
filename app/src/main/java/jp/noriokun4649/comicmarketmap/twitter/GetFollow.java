@@ -8,14 +8,15 @@ import android.app.Activity;
 import android.content.SharedPreferences;
 import android.os.Handler;
 import android.preference.PreferenceManager;
-import android.support.design.widget.CoordinatorLayout;
-import android.support.design.widget.Snackbar;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.google.android.material.snackbar.Snackbar;
+
 import java.util.ArrayList;
 
+import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import jp.noriokun4649.comicmarketmap.R;
 import jp.noriokun4649.comicmarketmap.getcirclespaceinfo.GetCircleSpaceInfo;
 import jp.noriokun4649.comicmarketmap.list.CircleListItemAdapter;

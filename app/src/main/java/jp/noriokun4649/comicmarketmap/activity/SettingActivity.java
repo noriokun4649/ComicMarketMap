@@ -8,9 +8,6 @@ import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
-import android.support.annotation.Nullable;
-import android.support.v4.view.LayoutInflaterCompat;
-import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Checkable;
@@ -23,6 +20,9 @@ import com.mikepenz.iconics.context.IconicsLayoutInflater2;
 
 import java.util.ArrayList;
 
+import androidx.annotation.Nullable;
+import androidx.appcompat.widget.Toolbar;
+import androidx.core.view.LayoutInflaterCompat;
 import io.multimoon.colorful.CAppCompatActivity;
 import io.multimoon.colorful.ColorfulKt;
 import jp.noriokun4649.comicmarketmap.R;

@@ -147,7 +147,7 @@
     <string name="library_colorful_authorWebsite" translatable="false">https://github.com/garretyoder/Colorful</string>
     <!-- Library section -->
     <string name="library_colorful_libraryName" translatable="false">Colorful</string>
-    <string name="library_colorful_libraryDescription" translatable="false">Colorful is a dynamic theme library allowing you to change your apps' color schemes easily.  Colorful v2 is here! v2 has been rewritten from the ground up in Kotlin to be lighter, faster, and more feature-packed</string>
+    <string name="library_colorful_libraryDescription" translatable="false">Colorful is a dynamic theme library allowing you to change your apps color schemes easily.  Colorful v2 is here! v2 has been rewritten from the ground up in Kotlin to be lighter, faster, and more feature-packed</string>
     <string name="library_colorful_libraryWebsite" translatable="false">https://github.com/garretyoder/Colorful</string>
     <string name="library_colorful_libraryVersion" translatable="false">2.3.4</string>
     <!-- OpenSource section -->

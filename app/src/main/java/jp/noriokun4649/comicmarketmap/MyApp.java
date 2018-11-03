@@ -4,10 +4,9 @@
 
 package jp.noriokun4649.comicmarketmap;
 
-import android.support.multidex.MultiDexApplication;
-
 import com.beardedhen.androidbootstrap.TypefaceProvider;
 
+import androidx.multidex.MultiDexApplication;
 import io.multimoon.colorful.ColorfulKt;
 import io.multimoon.colorful.Defaults;
 import io.multimoon.colorful.ThemeColor;

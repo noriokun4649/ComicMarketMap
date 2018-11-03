@@ -7,8 +7,8 @@ apply plugin: 'realm-android'
 apply plugin: 'com.google.firebase.firebase-perf'
 
 android {
-    compileSdkVersion 27
-    buildToolsVersion "27.0.3"
+    compileSdkVersion 28
+    buildToolsVersion '28.0.3'
     sourceSets {
         main {
             assets.srcDirs = ['assets']
@@ -17,11 +17,11 @@ android {
     defaultConfig {
         applicationId "jp.noriokun4649.comicmarketmap"
         minSdkVersion 19
-        targetSdkVersion 27
+        targetSdkVersion 28
         versionCode 1
         versionName "1.0"
-        multiDexEnabled false
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
         release {
@@ -35,41 +35,43 @@ android {
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-    implementation 'com.android.support:cardview-v7:27.1.1'
-    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
-    implementation 'com.android.support:appcompat-v7:27.1.1'
-    implementation 'com.android.support:design:27.1.1'
-    implementation 'com.android.support:multidex:1.0.3'
-    implementation 'com.android.support:recyclerview-v7:27.1.1'
-    implementation 'com.android.support:support-v4:27.1.1'
+    implementation 'androidx.multidex:multidex:2.0.0'
+    implementation 'androidx.cardview:cardview:1.0.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.0-alpha2'
+    implementation 'androidx.appcompat:appcompat:1.0.0'
+    implementation 'com.google.android.material:material:1.0.0'
+    implementation 'androidx.multidex:multidex:2.0.0'
+    implementation 'androidx.recyclerview:recyclerview:1.0.0'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     implementation 'com.beardedhen:androidbootstrap:2.3.1'
     implementation 'com.github.bumptech.glide:glide:4.8.0'
     implementation 'com.github.danielnilsson9:color-picker-view:1.4.0@aar'
     implementation 'com.github.garretyoder:Colorful:2.3.4'
     implementation 'com.github.manuelpeinado.imagelayout:imagelayout:1.1.0'
     implementation 'com.google.code.gson:gson:2.8.5'
-    implementation 'com.google.firebase:firebase-core:16.0.3'
-    implementation 'com.google.firebase:firebase-perf:16.1.0'
+    implementation 'com.google.firebase:firebase-core:16.0.4'
+    implementation 'com.google.firebase:firebase-perf:16.1.2'
     implementation 'com.kazakago.cryptore:cryptore:1.3.0'
-    implementation 'com.mikepenz:aboutlibraries:6.1.1'
+    implementation 'com.mikepenz:aboutlibraries:6.2.0'
     implementation 'com.mikepenz:community-material-typeface:2.0.46.1@aar'
-    implementation 'com.mikepenz:fastadapter:3.2.9'
-    implementation 'com.mikepenz:fastadapter-commons:3.2.9'
-    implementation 'com.mikepenz:fastadapter-extensions:3.2.9'
-    implementation 'com.mikepenz:fastadapter-extensions-expandable:3.2.9'
+    implementation 'com.mikepenz:fastadapter:3.3.1'
+    implementation 'com.mikepenz:fastadapter-commons:3.3.1'
+    implementation 'com.mikepenz:fastadapter-extensions:3.3.1'
+    implementation 'com.mikepenz:fastadapter-extensions-expandable:3.3.1'
     implementation 'com.mikepenz:google-material-typeface:3.0.1.2.original@aar'
-    implementation 'com.mikepenz:iconics-views:3.0.4@aar'
+    implementation 'com.mikepenz:iconics-views:3.1.0@aar'
     implementation 'com.mikepenz:itemanimators:1.0.2@aar'
-    implementation 'com.mikepenz:materialize:1.1.2'
+    implementation 'com.mikepenz:materialize:1.2.0'
     implementation 'com.turingtechnologies.materialscrollbar:lib:10.0.1'
     implementation 'io.realm:android-adapters:2.1.1'
     implementation 'org.twitter4j:twitter4j-async:4.0.7'
     implementation 'org.twitter4j:twitter4j-core:4.0.7'
     implementation 'uk.co.samuelwall:material-tap-target-prompt:2.12.1'
+    annotationProcessor 'androidx.annotation:annotation:1.0.0'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.8.0'
     testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'com.android.support.test:runner:1.0.2'
-    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    androidTestImplementation 'androidx.test:runner:1.1.0-beta01'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.0-beta01'
 }
 
 apply plugin: 'com.google.gms.google-services'

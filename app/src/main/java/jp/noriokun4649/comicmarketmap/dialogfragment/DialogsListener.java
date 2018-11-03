@@ -4,7 +4,7 @@
 
 package jp.noriokun4649.comicmarketmap.dialogfragment;
 
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 
 /**
  * フラグメントダイアログを通して行われたあらゆる操作を仲介します.

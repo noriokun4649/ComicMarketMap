@@ -10,7 +10,6 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.preference.PreferenceManager;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Base64;
 import android.widget.Toast;
 
@@ -32,6 +31,7 @@ import java.security.cert.CertificateException;
 
 import javax.crypto.NoSuchPaddingException;
 
+import androidx.appcompat.app.AppCompatActivity;
 import jp.noriokun4649.comicmarketmap.R;
 import jp.noriokun4649.comicmarketmap.dialogfragment.FragmentCancelOKAlertDialog;
 import twitter4j.AsyncTwitter;
