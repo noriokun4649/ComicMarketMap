@@ -91,4 +91,6 @@
     <string name="always_listen">常に聞く</string>
     <string name="normal">通常</string>
     <string name="nighttime">始発組(夜間)</string>
+    <string name="setting_button">設定</string>
+    <string name="notification">通知</string>
 </resources>
