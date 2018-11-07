@@ -49,8 +49,8 @@ dependencies {
     implementation 'com.github.garretyoder:Colorful:2.3.4'
     implementation 'com.github.manuelpeinado.imagelayout:imagelayout:1.1.0'
     implementation 'com.google.code.gson:gson:2.8.5'
-    implementation 'com.google.firebase:firebase-core:16.0.4'
-    implementation 'com.google.firebase:firebase-perf:16.1.2'
+    implementation 'com.google.firebase:firebase-core:16.0.5'
+    implementation 'com.google.firebase:firebase-perf:16.2.0'
     implementation 'com.kazakago.cryptore:cryptore:1.3.0'
     implementation 'com.mikepenz:aboutlibraries:6.2.0'
     implementation 'com.mikepenz:community-material-typeface:2.0.46.1@aar'
@@ -70,8 +70,8 @@ dependencies {
     annotationProcessor 'androidx.annotation:annotation:1.0.0'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.8.0'
     testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'androidx.test:runner:1.1.0-beta01'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.0-beta01'
+    androidTestImplementation 'androidx.test:runner:1.1.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.0'
 }
 
 apply plugin: 'com.google.gms.google-services'

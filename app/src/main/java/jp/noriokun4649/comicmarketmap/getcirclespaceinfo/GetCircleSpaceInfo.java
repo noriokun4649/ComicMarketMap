@@ -54,7 +54,7 @@ public class GetCircleSpaceInfo {
                 .replaceAll("―", "")
                 .replaceAll("ｰ", "")
                 .replaceAll("‑", "");
-        Matcher matcher = Pattern.compile("[A-Zア-ンあ-ん][0-9]{2}[ab]").matcher(indataNew);
+        Matcher matcher = Pattern.compile("[A-Zア-ンあ-ん][0-9]{2}[ab]?").matcher(indataNew);
         while (matcher.find()) {
             return matcher.group();
         }
@@ -69,11 +69,11 @@ public class GetCircleSpaceInfo {
      * @return ホールの抽出結果
      */
     public String getHole(final String indata) {
-        if (indata.matches("[A-Zア-サ][0-9]{2}[ab]")) {
+        if (indata.matches("[A-Zア-サ][0-9]{2}[ab]?")) {
             return "東123";
-        } else if (indata.matches("[シ-ロ][0-9]{2}[ab]")) {
+        } else if (indata.matches("[シ-ロ][0-9]{2}[ab]?")) {
             return "東456";
-        } else if (indata.matches("[あ-れ][0-9]{2}[ab]")) {
+        } else if (indata.matches("[あ-れ][0-9]{2}[ab]?")) {
             return "西12";
         }
         return "ホール";
@@ -86,12 +86,12 @@ public class GetCircleSpaceInfo {
      * @return 開催日の抽出結果
      */
     public String getDay(final String indata) {
-        if (indata.matches(".*(([1１一]日目)|(金)|(金曜)|([8８][/／][1１][0０])|(\\([金]\\))).*")) {
+        if (indata.matches(".*(([1１一]日目)|(土)|(土曜)|([1１][2２][/／][2２][9９])|(\\([土]\\))).*")) {
             return "1日目";
-        } else if (indata.matches(".*(([2２二]日目)|(土)|(土曜)|([8８][/／][1１][1１])|(\\([土]\\))).*")) {
-            return "2日目";
-        } else if (indata.matches(".*(([3３三]日目)|(日)|(日曜)|([8８][/／][1１][2２])|(\\([日]\\))).*")) {
+        } else if (indata.matches(".*(([3３三]日目)|(月)|(月曜)|([1１][2２][/／][3３][1１])|(\\([月]\\))).*")) {
             return "3日目";
+        } else if (indata.matches(".*(([2２二]日目)|(日)|(日曜)|([1１][2２][/／][3３][0０])|(\\([日]\\))).*")) {
+            return "2日目";
         }
         return "開催日";
     }
@@ -103,7 +103,7 @@ public class GetCircleSpaceInfo {
      * @return コミケ参加者かどうかを判定します
      */
     private boolean isComicMarket(final String indata) {
-        return indata.matches(".*(([1-3１-３一二三]日目)|([金土日]曜)|([8８][/／][1１][0-2０-２])|(\\([金土日]\\))).*");
+        return indata.matches(".*(([1-3１-３一二三]日目)|([土日月]曜)|([1１][2２][/／]([2２][9９]|[3３][0-1０-１]))|(\\([土日月]\\))).*");
     }
 
     /**
@@ -114,7 +114,7 @@ public class GetCircleSpaceInfo {
      */
     @SuppressWarnings("LoopStatementThatDoesntLoop")
     private String getUser(final String indata) {
-        Matcher matcher = Pattern.compile(".*(?!.*(([1-3１-３一二三]日目)|([金土日]曜)|([8８][/／][1１][0-2０-２])|(\\([金土日]\\)).*)).*").matcher(indata);
+        Matcher matcher = Pattern.compile(".*(?!.*(([1-3１-３一二三]日目)|([土日月]曜)|([1１][2２][/／]([2２][9９]|[3３][0-1０-１]))|(\\([土日月]\\)).*)).*").matcher(indata);
         while (matcher.find()) {
             return matcher.group();
         }

@@ -19,11 +19,6 @@ import io.realm.RealmResults;
 import jp.noriokun4649.comicmarketmap.R;
 import jp.noriokun4649.comicmarketmap.db.DBInfoAdapter;
 import jp.noriokun4649.comicmarketmap.db.DBObject;
-
-<<<<<<<HEAD
-        =======
-        >>>>>>>3700306d2900654023d8c70c55f43507ef178354
-
 /**
  * サークル情報のフラグメントです.
  */
