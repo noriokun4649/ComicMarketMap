@@ -67,11 +67,13 @@ public class CircleListImportFragment extends Fragment {
         Import twitter = new Import(CommunityMaterial.Icon.cmd_twitter, getString(R.string.twitter_conect));
         Import follow = new Import(CommunityMaterial.Icon.cmd_account_check, getString(R.string.follow_import));
         Import list = new Import(GoogleMaterial.Icon.gmd_playlist_add_check, getString(R.string.list_import));
+        Import extension = new Import(GoogleMaterial.Icon.gmd_extension, "サークル当落ツイートからインポート(試験実装)");
         Import csv = new Import(CommunityMaterial.Icon.cmd_file_delimited, getString(R.string.csv_import));
         Import backup = new Import(GoogleMaterial.Icon.gmd_settings_backup_restore, getString(R.string.backup_import));
         imports.add(twitter);
         imports.add(follow);
         imports.add(list);
+        imports.add(extension);
         imports.add(csv);
         imports.add(backup);
         ListItemAdapter adapter = new ListItemAdapter(getContext(), imports);
@@ -107,9 +109,12 @@ public class CircleListImportFragment extends Fragment {
                         }
                         return;
                     case 3:
-                        startActivity(new Intent(getActivity(), ImportCSVActivity.class));
+
                         return;
                     case 4:
+                        startActivity(new Intent(getActivity(), ImportCSVActivity.class));
+                        return;
+                    case 5:
                         startActivity(new Intent(getActivity(), ImportBackupActivity.class));
                         return;
                     default:

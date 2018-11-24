@@ -9,6 +9,10 @@ apply plugin: 'com.google.firebase.firebase-perf'
 android {
     compileSdkVersion 28
     buildToolsVersion '28.0.3'
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
     sourceSets {
         main {
             assets.srcDirs = ['assets']
