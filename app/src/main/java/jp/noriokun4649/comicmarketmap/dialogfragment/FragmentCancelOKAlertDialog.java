@@ -62,7 +62,7 @@ public class FragmentCancelOKAlertDialog extends DialogFragment {
     @NonNull
     @Override
     public Dialog onCreateDialog(final Bundle savedInstanceState) {
-        AlertDialog.Builder a = new AlertDialog.Builder(getContext());
+        androidx.appcompat.app.AlertDialog.Builder a = new AlertDialog.Builder(getContext());
         a.setMessage(massage);
         if (title != 0) {
             a.setTitle(title);

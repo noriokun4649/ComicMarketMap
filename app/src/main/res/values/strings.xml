@@ -93,5 +93,6 @@
     <string name="nighttime">Nighttime</string>
     <string name="setting_button">Setting</string>
     <string name="notification">Notification</string>
+    <string name="info">infomation</string>
 
 </resources>

@@ -50,7 +50,7 @@ public class FragmentItemsAlertDialog extends DialogFragment {
     @NonNull
     @Override
     public Dialog onCreateDialog(final Bundle savedInstanceState) {
-        AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
+        androidx.appcompat.app.AlertDialog.Builder builder = new androidx.appcompat.app.AlertDialog.Builder(getContext());
         builder.setTitle(R.string.please_action);
         builder.setItems(a, new DialogInterface.OnClickListener() {
             @Override

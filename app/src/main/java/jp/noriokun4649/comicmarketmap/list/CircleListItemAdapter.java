@@ -6,6 +6,10 @@ package jp.noriokun4649.comicmarketmap.list;
 
 import android.content.Context;
 import android.graphics.Color;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.core.content.ContextCompat;
+import androidx.cardview.widget.CardView;
 import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -19,10 +23,6 @@ import com.beardedhen.androidbootstrap.BootstrapButton;
 
 import java.util.List;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.cardview.widget.CardView;
-import androidx.core.content.ContextCompat;
 import jp.noriokun4649.comicmarketmap.R;
 import jp.noriokun4649.comicmarketmap.glide.MyGlideApp;
 

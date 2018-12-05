@@ -1,6 +1,9 @@
 package jp.noriokun4649.comicmarketmap.db;
 
 import android.graphics.Color;
+import androidx.annotation.Nullable;
+import androidx.core.content.ContextCompat;
+import androidx.cardview.widget.CardView;
 import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,9 +15,6 @@ import android.widget.TextView;
 
 import com.beardedhen.androidbootstrap.BootstrapButton;
 
-import androidx.annotation.Nullable;
-import androidx.cardview.widget.CardView;
-import androidx.core.content.ContextCompat;
 import io.realm.OrderedRealmCollection;
 import io.realm.RealmBaseAdapter;
 import jp.noriokun4649.comicmarketmap.R;

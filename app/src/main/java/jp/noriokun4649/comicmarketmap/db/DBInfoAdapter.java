@@ -1,6 +1,7 @@
 package jp.noriokun4649.comicmarketmap.db;
 
-import androidx.annotation.Nullable;
+import javax.annotation.Nullable;
+
 import io.realm.OrderedRealmCollection;
 import jp.noriokun4649.comicmarketmap.R;
 
@@ -16,7 +17,7 @@ public class DBInfoAdapter extends DBAdapter {
 
     @Override
     int getMemoText() {
-        return R.string.setting_button;
+        return R.string.info;
     }
 
     @Override

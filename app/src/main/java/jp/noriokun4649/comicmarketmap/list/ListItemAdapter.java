@@ -6,6 +6,8 @@ package jp.noriokun4649.comicmarketmap.list;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,8 +19,6 @@ import com.mikepenz.iconics.view.IconicsImageView;
 
 import java.util.List;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import io.multimoon.colorful.ColorfulKt;
 import jp.noriokun4649.comicmarketmap.R;
 

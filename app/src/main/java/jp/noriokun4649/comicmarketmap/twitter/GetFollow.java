@@ -4,7 +4,6 @@
 
 package jp.noriokun4649.comicmarketmap.twitter;
 
-import android.app.Activity;
 import android.content.SharedPreferences;
 import android.os.Handler;
 import android.preference.PreferenceManager;
@@ -16,6 +15,7 @@ import com.google.android.material.snackbar.Snackbar;
 
 import java.util.ArrayList;
 
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import jp.noriokun4649.comicmarketmap.R;
 import jp.noriokun4649.comicmarketmap.getcirclespaceinfo.GetCircleSpaceInfo;
@@ -57,7 +57,7 @@ public class GetFollow {
     /**
      * アクティビティの情報.
      */
-    private Activity context;
+    private AppCompatActivity context;
     /**
      * スナックバー.
      */
@@ -72,7 +72,7 @@ public class GetFollow {
      * @param asyncTwitter 非同期処理のTwitterインスタンス
      * @param adapter      リストViewのアダプタ
      */
-    public GetFollow(final Activity contexts, final AsyncTwitter asyncTwitter, final CircleListItemAdapter adapter) {
+    public GetFollow(final AppCompatActivity contexts, final AsyncTwitter asyncTwitter, final CircleListItemAdapter adapter) {
         this.asyncTwitter = asyncTwitter;
         this.context = contexts;
         final CoordinatorLayout layout = context.findViewById(R.id.coord);

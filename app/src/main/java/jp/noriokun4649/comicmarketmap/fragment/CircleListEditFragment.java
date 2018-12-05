@@ -5,16 +5,17 @@
 package jp.noriokun4649.comicmarketmap.fragment;
 
 import android.os.Bundle;
+import androidx.annotation.NonNull;
+import androidx.fragment.app.Fragment;
+import androidx.appcompat.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.appcompat.widget.Toolbar;
-import androidx.fragment.app.Fragment;
+import javax.annotation.Nullable;
+
 import io.realm.Realm;
 import io.realm.RealmResults;
 import jp.noriokun4649.comicmarketmap.R;

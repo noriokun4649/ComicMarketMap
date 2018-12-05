@@ -5,7 +5,6 @@
 package jp.noriokun4649.comicmarketmap.twitter;
 
 import android.annotation.SuppressLint;
-import android.app.Activity;
 import android.content.SharedPreferences;
 import android.os.Handler;
 import android.preference.PreferenceManager;
@@ -17,6 +16,7 @@ import com.google.android.material.snackbar.Snackbar;
 
 import java.util.ArrayList;
 
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import jp.noriokun4649.comicmarketmap.R;
 import jp.noriokun4649.comicmarketmap.getcirclespaceinfo.GetCircleSpaceInfo;
@@ -53,7 +53,7 @@ public class GetList {
     /**
      * アクティビティの情報.
      */
-    private Activity context;
+    private AppCompatActivity context;
     /**
      * 取得完了したメンバーの数.
      * 動的
@@ -86,7 +86,7 @@ public class GetList {
      * @param memberCount  そのListに何人のメンバーがいるかを入れる
      * @param adapter      リストViewのアダプタ
      */
-    public GetList(final Activity contexts, final AsyncTwitter asyncTwitter, final Long listID,
+    public GetList(final AppCompatActivity contexts, final AsyncTwitter asyncTwitter, final Long listID,
                    final int memberCount, final CircleListItemAdapter adapter) {
         this.asyncTwitter = asyncTwitter;
         this.listID = listID;

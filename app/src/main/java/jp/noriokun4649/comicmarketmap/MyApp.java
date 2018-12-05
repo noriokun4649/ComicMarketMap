@@ -4,6 +4,7 @@
 
 package jp.noriokun4649.comicmarketmap;
 
+
 import com.beardedhen.androidbootstrap.TypefaceProvider;
 
 import androidx.multidex.MultiDexApplication;

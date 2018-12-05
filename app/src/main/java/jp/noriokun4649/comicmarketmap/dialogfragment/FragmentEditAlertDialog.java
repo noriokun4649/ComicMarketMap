@@ -58,7 +58,7 @@ public class FragmentEditAlertDialog extends DialogFragment {
         final EditText editText = new EditText(getContext());
         editText.setMaxLines(1);
         editText.setInputType(InputType.TYPE_CLASS_TEXT);
-        AlertDialog.Builder alert = new AlertDialog.Builder(getContext()).setTitle(items[defaultItem]).setView(editText).setPositiveButton("OK", new DialogInterface.OnClickListener() {
+        androidx.appcompat.app.AlertDialog.Builder alert = new androidx.appcompat.app.AlertDialog.Builder(getContext()).setTitle(items[defaultItem]).setView(editText).setPositiveButton("OK", new DialogInterface.OnClickListener() {
             public void onClick(final DialogInterface dialog, final int whichButton) {
                 mListener.onOKClick(defaultItem, position, editText.getText().toString(), getTag(), null);
             }

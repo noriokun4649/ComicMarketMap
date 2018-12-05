@@ -4,6 +4,7 @@
 
 package jp.noriokun4649.comicmarketmap.dialogfragment;
 
+
 import androidx.annotation.Nullable;
 
 /**

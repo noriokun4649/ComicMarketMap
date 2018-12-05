@@ -22,7 +22,9 @@ import com.mikepenz.iconics.context.IconicsLayoutInflater2;
 
 import java.util.ArrayList;
 
-import androidx.annotation.Nullable;
+import javax.annotation.Nullable;
+
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import androidx.core.view.LayoutInflaterCompat;
@@ -44,7 +46,7 @@ import twitter4j.AsyncTwitter;
  * インポートアクティビティのベースです.
  * 様々なインポート方法ののちに表示されるユーザー結果を表示するさいに継承します。
  */
-abstract class ImportBase extends CAppCompatActivity
+abstract class ImportBase extends AppCompatActivity
         implements ColorPickerDialogFragment.ColorPickerDialogListener, DialogsListener {
 
     /**

@@ -12,20 +12,19 @@ import android.database.Cursor;
 import android.net.Uri;
 import android.preference.PreferenceManager;
 import android.provider.OpenableColumns;
+import androidx.annotation.Nullable;
+import androidx.coordinatorlayout.widget.CoordinatorLayout;
+import com.google.android.material.snackbar.Snackbar;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-
-import com.google.android.material.snackbar.Snackbar;
 
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.math.BigDecimal;
 
-import androidx.annotation.Nullable;
-import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import jp.noriokun4649.comicmarketmap.R;
 import jp.noriokun4649.comicmarketmap.asycktasks.AsyncTaskClass;
 import jp.noriokun4649.comicmarketmap.list.CircleListItemAdapter;

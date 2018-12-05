@@ -7,23 +7,23 @@ package jp.noriokun4649.comicmarketmap.fragment;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import com.google.android.material.snackbar.Snackbar;
+import androidx.fragment.app.Fragment;
+import androidx.appcompat.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
-import com.google.android.material.snackbar.Snackbar;
 import com.mikepenz.community_material_typeface_library.CommunityMaterial;
 import com.mikepenz.google_material_typeface_library.GoogleMaterial;
 import com.mikepenz.materialize.MaterializeBuilder;
 
 import java.util.ArrayList;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.appcompat.widget.Toolbar;
-import androidx.fragment.app.Fragment;
 import jp.noriokun4649.comicmarketmap.R;
 import jp.noriokun4649.comicmarketmap.activity.ImportBackupActivity;
 import jp.noriokun4649.comicmarketmap.activity.ImportCSVActivity;
