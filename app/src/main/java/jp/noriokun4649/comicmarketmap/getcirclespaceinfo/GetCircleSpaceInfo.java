@@ -38,6 +38,7 @@ public class GetCircleSpaceInfo {
         String indataNew = indata;
         indataNew = Normalizer.normalize(indataNew, Normalizer.Form.NFKC);
         indataNew = indataNew
+                //.replaceAll("C95","")
                 .replaceAll("”", "")
                 .replaceAll("“", "")
                 .replaceAll("　", "")
@@ -54,7 +55,7 @@ public class GetCircleSpaceInfo {
                 .replaceAll("―", "")
                 .replaceAll("ｰ", "")
                 .replaceAll("‑", "");
-        Matcher matcher = Pattern.compile("[A-Zア-ンあ-ん][0-9]{2}[ab]?").matcher(indataNew);
+        Matcher matcher = Pattern.compile("[A-Za-zア-ンあ-ん][0-9]{2}([ab]|ab)?").matcher(indataNew);
         while (matcher.find()) {
             return matcher.group();
         }
@@ -69,11 +70,12 @@ public class GetCircleSpaceInfo {
      * @return ホールの抽出結果
      */
     public String getHole(final String indata) {
-        if (indata.matches("[A-Zア-サ][0-9]{2}[ab]?")) {
+        String indataNew = Normalizer.normalize(indata, Normalizer.Form.NFKC);
+        if (indataNew.matches("[A-Za-zア-サ][0-9]{2}[ab]?")) {
             return "東123";
-        } else if (indata.matches("[シ-ロ][0-9]{2}[ab]?")) {
+        } else if (indataNew.matches("[シ-ロ][0-9]{2}[ab]?")) {
             return "東456";
-        } else if (indata.matches("[あ-れ][0-9]{2}[ab]?")) {
+        } else if (indataNew.matches("[あ-れ][0-9]{2}[ab]?")) {
             return "西12";
         }
         return "ホール";
@@ -86,11 +88,12 @@ public class GetCircleSpaceInfo {
      * @return 開催日の抽出結果
      */
     public String getDay(final String indata) {
-        if (indata.matches(".*(([1１一]日目)|(土)|(土曜)|([1１][2２][/／][2２][9９])|(\\([土]\\))).*")) {
+        String indataNew = Normalizer.normalize(indata, Normalizer.Form.NFKC);
+        if (indataNew.matches(".*(([1一]日目)|(土)|(土曜)|([1][2][/][2][9])|(\\([土]\\))).*")) {
             return "1日目";
-        } else if (indata.matches(".*(([3３三]日目)|(月)|(月曜)|([1１][2２][/／][3３][1１])|(\\([月]\\))).*")) {
+        } else if (indataNew.matches(".*(([3三]日目)|(月)|(月曜)|([1][2][/][3][1])|(\\([月]\\))).*")) {
             return "3日目";
-        } else if (indata.matches(".*(([2２二]日目)|(日)|(日曜)|([1１][2２][/／][3３][0０])|(\\([日]\\))).*")) {
+        } else if (indataNew.matches(".*(([2二]日目)|(日)|(日曜)|([1][2][/][3][0])|(\\([日]\\))).*")) {
             return "2日目";
         }
         return "開催日";
@@ -103,7 +106,8 @@ public class GetCircleSpaceInfo {
      * @return コミケ参加者かどうかを判定します
      */
     private boolean isComicMarket(final String indata) {
-        return indata.matches(".*(([1-3１-３一二三]日目)|([土日月]曜)|([1１][2２][/／]([2２][9９]|[3３][0-1０-１]))|(\\([土日月]\\))).*");
+        String indataNew = Normalizer.normalize(indata, Normalizer.Form.NFKC);
+        return indataNew.matches(".*(([1-3一二三]日目)|([土日月]曜)|([1][2][/]([2][9]|[3][0-1]))|(\\([土日月]\\))).*");
     }
 
     /**
@@ -114,7 +118,8 @@ public class GetCircleSpaceInfo {
      */
     @SuppressWarnings("LoopStatementThatDoesntLoop")
     private String getUser(final String indata) {
-        Matcher matcher = Pattern.compile(".*(?!.*(([1-3１-３一二三]日目)|([土日月]曜)|([1１][2２][/／]([2２][9９]|[3３][0-1０-１]))|(\\([土日月]\\)).*)).*").matcher(indata);
+        String indataNew = Normalizer.normalize(indata, Normalizer.Form.NFKC);
+        Matcher matcher = Pattern.compile(".*(?!.*(([1-3一二三]日目)|([土日月]曜)|([1][2][/]([2][9]|[3][0-1]))|(\\([土日月]\\)).*)).*").matcher(indataNew);
         while (matcher.find()) {
             return matcher.group();
         }
@@ -128,7 +133,8 @@ public class GetCircleSpaceInfo {
      * @return 壁サークルかどうかを返します
      */
     public boolean isWall(final String string) {
-        return string.matches(".*[Aシあれ].*");
+        String stringNew = Normalizer.normalize(string, Normalizer.Form.NFKC);
+        return stringNew.matches(".*[Aaシあれ].*");
     }
 
     /**

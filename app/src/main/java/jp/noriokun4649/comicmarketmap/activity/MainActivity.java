@@ -12,6 +12,8 @@ import android.preference.PreferenceManager;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import com.google.android.material.navigation.NavigationView;
+
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.core.view.GravityCompat;
@@ -49,7 +51,7 @@ import static android.content.DialogInterface.BUTTON_POSITIVE;
 /**
  * メインのアクティビティ.
  */
-public class MainActivity extends CAppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, DialogsListener {
+public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, DialogsListener {
     /**
      * Twitterのインスタンス.
      */
