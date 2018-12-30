@@ -1,8 +1,4 @@
-/*
- * Copyright (c) 2018 noriokun4649.
- */
-
-package jp.noriokun4649.comicmarketmap.fragment;
+package jp.noriokun4649.comicmarketmap.fragment.day;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -13,7 +9,6 @@ import android.widget.ListView;
 import javax.annotation.Nullable;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 import io.realm.Realm;
 import io.realm.RealmResults;
@@ -24,7 +19,7 @@ import jp.noriokun4649.comicmarketmap.db.DBObject;
 /**
  * サークル情報のフラグメントです.
  */
-public class CircleInfoFragment extends Fragment {
+public class DaySecond extends Fragment {
     /**
      * Realmデータベースのインスタンス.
      */
@@ -38,11 +33,8 @@ public class CircleInfoFragment extends Fragment {
                              @Nullable final ViewGroup container,
                              @Nullable final Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.circle_info_layout, container, false);
-        Toolbar toolbar = getActivity().findViewById(R.id.toolbar);
-        toolbar.setTitle(getString(R.string.CircleInfo));
-        toolbar.getMenu().clear();
         realm = Realm.getDefaultInstance();
-        final RealmResults<DBObject> dbObjects = realm.where(DBObject.class).sort("block").findAll();
+        final RealmResults<DBObject> dbObjects = realm.where(DBObject.class).equalTo("day","2日目").sort("block").findAll();
         dbInfoAdapter = new DBInfoAdapter(dbObjects);
         ListView listView = view.findViewById(R.id.list_info);
         listView.setAdapter(dbInfoAdapter);

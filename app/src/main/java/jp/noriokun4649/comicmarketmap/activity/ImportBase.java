@@ -28,7 +28,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import androidx.core.view.LayoutInflaterCompat;
-import io.multimoon.colorful.CAppCompatActivity;
 import io.realm.Realm;
 import io.realm.RealmAsyncTask;
 import jp.noriokun4649.comicmarketmap.R;

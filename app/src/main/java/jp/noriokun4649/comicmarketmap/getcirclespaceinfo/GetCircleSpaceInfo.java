@@ -155,6 +155,7 @@ public class GetCircleSpaceInfo {
                     String screenName = list[1];
                     String url = list[2];
                     if (!mode || isComicMarket(name)) {
+
                         String day = getDay(name);
                         String block = getBlock(name);
                         String hall = getHole(block);

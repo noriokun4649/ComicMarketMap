@@ -101,9 +101,7 @@ public class GetFollow {
                             for (int as = 0; as < 100; as++) {
                                 longs[as] = idsd[point];
                                 point++;
-                                if (idsd.length <= point) {
-                                    break;
-                                }
+                                if (idsd.length <= point) break;
                             }
                             //100件ごとに内部IDを元にユーザデータを取得するようにする。
                             asyncTwitter.lookupUsers(longs);

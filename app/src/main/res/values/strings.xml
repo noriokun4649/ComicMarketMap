@@ -94,5 +94,11 @@
     <string name="setting_button">Setting</string>
     <string name="notification">Notification</string>
     <string name="info">infomation</string>
+    <string name="title_activity_tab">TabActivity</string>
+    <string name="tab_text_1">1日目</string>
+    <string name="tab_text_2">2日目</string>
+    <string name="tab_text_3">3日目</string>
+    <string name="action_settings">Settings</string>
+    <string name="section_format">Hello World from section: %1$d</string>
 
 </resources>

@@ -4,11 +4,11 @@
 
 package jp.noriokun4649.comicmarketmap.activity;
 
-import androidx.annotation.Nullable;
 import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import androidx.annotation.Nullable;
 import jp.noriokun4649.comicmarketmap.R;
 import jp.noriokun4649.comicmarketmap.list.CircleListItemAdapter;
 import twitter4j.AsyncTwitter;
