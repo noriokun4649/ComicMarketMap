@@ -20,6 +20,7 @@ import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 import jp.noriokun4649.comicmarketmap.R;
 import jp.noriokun4649.comicmarketmap.fragment.day.DayFast;
+import jp.noriokun4649.comicmarketmap.fragment.day.DayFourth;
 import jp.noriokun4649.comicmarketmap.fragment.day.DaySecond;
 import jp.noriokun4649.comicmarketmap.fragment.day.DayThaad;
 
@@ -108,6 +109,8 @@ public class CircleListFragment extends Fragment {
                     return new DaySecond();
                 case 2:
                     return new DayThaad();
+                case 3:
+                    return new DayFourth();
                 default:
                     return new DayFast();
             }
@@ -117,7 +120,7 @@ public class CircleListFragment extends Fragment {
         @Override
         public int getCount() {
             // Show 3 total pages.
-            return 3;
+            return 4;
         }
     }
 }
